@@ -633,6 +633,22 @@ def build() -> int:
     )
     (DOCS / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
+    # stamp asset and image URLs so caches notice replaced files
+    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    stamp_pairs = [
+        ("assets/css/main.css", f"assets/css/main.css?v={stamp}"),
+        ("assets/js/main.js", f"assets/js/main.js?v={stamp}"),
+        ("assets/favicon.svg", f"assets/favicon.svg?v={stamp}"),
+        ("images/hero.jpg", f"images/hero.jpg?v={stamp}"),
+        ("images/avatar.jpg", f"images/avatar.jpg?v={stamp}"),
+        ("images/portrait.jpg", f"images/portrait.jpg?v={stamp}"),
+    ]
+    for page in DOCS.rglob("*.html"):
+        text = page.read_text(encoding="utf-8")
+        for old, new in stamp_pairs:
+            text = text.replace(old, new)
+        page.write_text(text, encoding="utf-8")
+
     print(f"built {len(posts)} posts, {len(tag_map)} tags -> {DOCS}")
     return 0
 
