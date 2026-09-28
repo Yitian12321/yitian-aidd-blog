@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design · Yitian&#x27;s AIDD Blog</title>
+<meta name="description" content="Notes on the Structure review &quot;Code to complex: AI-driven de novo binder design&quot; — forty years from rational design to generative design, the four current design philosophies, and where the bench-to-bedside stories already are.">
+<meta name="author" content="Yitian Xiao">
+<meta property="og:title" content="A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design · Yitian&#x27;s AIDD Blog">
+<meta property="og:description" content="Notes on the Structure review &quot;Code to complex: AI-driven de novo binder design&quot; — forty years from rational design to generative design, the four current design philosophies, and where the bench-to-bedside stories already are.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/posts/cell-review-de-novo-binder-design.html">
+<link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="../feed.xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="profile">
+    <a href="../index.html"><img class="avatar" src="../images/avatar.png" alt="Yitian Xiao"></a>
+    <div class="name">Yitian Xiao</div>
+    <p class="tagline">Notes on AI-driven protein and binder design.</p>
+  </div>
+  <div class="social">
+    <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+    <a href="../feed.xml" title="RSS" aria-label="RSS feed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0Z"/><path d="M1.82 8.4v3.05c5.93 0 10.73 4.8 10.73 10.73h3.05c0-7.6-6.18-13.78-13.78-13.78Z"/><path d="M1.82 1.82v3.05C10.5 4.87 17.5 11.87 17.5 20.55h3.05c0-11.98-9.75-21.73-21.73-21.73Z"/></svg></a>
+  </div>
+  <nav>
+    <a href="../index.html" class="active">Posts</a>
+    <a href="../tags.html">Tags</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <div class="recent">
+    <h2>Recent posts</h2>
+    <ul>
+<li><a href="../posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era</a><time>Dec 15, 2025</time></li>
+<li><a href="../posts/protein-hunter.html">Protein Hunter: Structural Hallucination as a Design Engine</a><time>Oct 17, 2025</time></li>
+<li><a href="../posts/rfdiffusion-trilogy.html">From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a><time>Sep 24, 2025</time></li>
+<li><a href="../posts/cell-review-de-novo-binder-design.html">A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design</a><time>Sep 5, 2025</time></li>
+<li><a href="../posts/hallucination-is-all-you-need.html">Hallucination Is All You Need? Protein Hallucination Design After BindCraft</a><time>Aug 14, 2025</time></li>
+    </ul>
+  </div>
+  <div class="sidebar-foot">
+    Chinese originals on WeChat<br><em>AIDD小白随想录</em>
+    <button class="theme-toggle" id="theme-toggle" type="button">Toggle theme</button>
+  </div>
+</aside>
+<main class="main">
+  <div class="wrap">
+<article class="post">
+  <h1 class="post-title">A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design</h1>
+  <div class="post-meta">
+    <time datetime="2025-09-05">September 5, 2025</time>
+    <span class="dot">·</span><span>9 min read</span>
+<span class="dot">·</span><span class="tags"><a class="tag" href="../tags/review.html">Review</a><a class="tag" href="../tags/binder-design.html">Binder design</a><a class="tag" href="../tags/protein-design.html">Protein design</a><a class="tag" href="../tags/alphafold.html">AlphaFold</a><a class="tag" href="../tags/paper-notes.html">Paper notes</a></span>
+  </div>
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+<li><a href="#01-introduction">01 — Introduction</a></li>
+<li><a href="#02-milestones-from-rational-design-to-generative-ai">02 — Milestones: from rational design to generative AI</a></li>
+<li><a href="#03-the-ai-toolbox-how-the-main-strategies-work">03 — The AI toolbox: how the main strategies work</a></li>
+<li><a href="#04-bench-to-bedside-where-designed-proteins-are-already-used">04 — Bench to bedside: where designed proteins are already used</a></li>
+<li><a href="#05-challenges-technical-limits">05 — Challenges: technical limits</a></li>
+<li><a href="#06-code-to-complex-a-new-era-for-binder-design">06 — &quot;Code to Complex&quot;: a new era for binder design</a></li>
+  </ol>
+</div>
+  <div class="post-body">
+<blockquote><p>"'Code to Complex' works two ways. <em>Code</em> is both computer code and the code of life spelled out in a protein sequence, and the title captures the essence of the change: we are moving from reading and writing the genetic code to writing functional modules of life."</p></blockquote>
+<p>If you were a programmer, how would you "code" a protein?</p>
+<p>This is not a privilege reserved for the creators of Greek myth. It is happening now. Over the past few years AI has learned not only to predict how proteins fold but to design proteins that nature has never made: proteins that bind a virus precisely, neutralize a toxin, or tune the immune system. All of it comes from a quiet computational revolution.</p>
+<p>On September 1, 2025, Cell's <em>Structure</em> published the review <strong>Code to complex: AI-driven de novo binder design</strong>. Having read it, I would call it a high-quality entry point to AI binder design: a precise and generous map of how AI drives de novo protein design from theory toward therapeutics. We want to design not only structures but functions; not only imitate nature but begin to surpass it. So let us follow the review's own thread through forty years of protein design.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/041b1f737c2ecb27e9846db2.png" alt="The review&#x27;s cover figure" loading="lazy"><figcaption>The review's cover figure</figcaption></figure>
+<h2 id="01-introduction">01 — Introduction</h2>
+<p>The original paper: <a href="https://doi.org/10.1016/j.str.2025.08.007">Code to complex: AI-driven de novo binder design</a>, <em>Structure</em>, Cell Press, open access.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/73c8741181818b0dbcd15826.png" alt="The Structure review" loading="lazy"><figcaption>The Structure review</figcaption></figure>
+<h2 id="02-milestones-from-rational-design-to-generative-ai">02 — Milestones: from rational design to generative AI</h2>
+<p>The review's main figure condenses the milestones of de novo binder design. Looking back, the history of protein design reads like an evolution from experience toward automation.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/2de57b384fe84e5fa084ebdf.png" alt="Milestones in de novo binder design" loading="lazy"><figcaption>Milestones in de novo binder design</figcaption></figure>
+<ul><li>As early as <strong>1988</strong>, DeGrado and co-workers built the first successful artificial four-helix bundle by rational design. What they relied on was a deep understanding of how hydrophobic cores and polar residues should be arranged, what you might call the first principles of proteins. The achievement was modest in size but proved a fundamental proposition: <strong>humans really can design proteins from scratch</strong>.</li><li>In the 21st century, computational methods made design systematic. In <strong>2003</strong>, the Baker lab's <strong>TOP7</strong> became a milestone: the first de novo protein generated entirely by computation, with no natural template, that folded stably. The method was physical energy function optimisation with Monte Carlo sampling. From then on protein design was no longer only an art of structure; it became a science you could compute and optimise.</li></ul>
+<blockquote><p>"Baker's legendary road as the hand of God begins here, and protein design formally enters the computable stage. (PS: your author was born right about then.)"</p></blockquote>
+<ul><li>Over the following decade researchers aimed at harder <strong>functional design</strong>: binders against the conserved region of influenza hemagglutinin, screened at high throughput with yeast display. But those methods still leaned heavily on expert intuition, with limited success rates and poor generality.</li><li>The real turning point came in <strong>2020</strong>: AlphaFold2 arrived and reached near-experimental accuracy in the 14th Critical Assessment of protein Structure Prediction (CASP14). Predictions were astonishing, but more importantly the deep learning architecture underneath became the foundation for generative design models. Suddenly AI could not only predict protein structures; it could create them.</li></ul>
+<blockquote><p>"DeepMind pushed AI prediction so close to experiment that CASP14 conceded the single-chain structure prediction problem was largely solved, which set off an industrial revolution in protein prediction and design."</p></blockquote>
+<ul><li>In the last two years a series of tools — RFdiffusion, ProteinMPNN, BindCraft — raised design success rates by one to two orders of magnitude. Today a researcher can generate a few dozen candidates in silico and expect a decent chance of a high-affinity, high-specificity binder. Protein design has entered its automation era.</li></ul>
+<h2 id="03-the-ai-toolbox-how-the-main-strategies-work">03 — The AI toolbox: how the main strategies work</h2>
+<p>Despite the proliferation of tools, the review groups current design strategies into four classes, each a different design philosophy.</p>
+<p><strong>Hallucination</strong> grew out of the trRosetta framework. The idea is neat: invert the structure prediction network. A model built to go from sequence to structure is repurposed to generate new foldable backbones from random noise. Because it depends on no existing template, it greatly widens the range of designable structures.</p>
+<p><strong>MaSIF</strong> (molecular surface interaction fingerprints) takes a more visual approach. Instead of starting from global structure, it analyses the chemical and geometric features of protein surfaces to find patches likely to interact. Once such a patch is found on a target, MaSIF can search for or design a complementary surface for precise docking. This suits targets with no obvious active site, which classical methods handle poorly. It has produced binders against the <strong>SARS-CoV-2 spike</strong> protein and <strong>PD-L1</strong>.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/a407fdd62fad9360770715d7.png" alt="Designing against surface fingerprints" loading="lazy"><figcaption>Designing against surface fingerprints</figcaption></figure>
+<figure><img src="../images/cell-review-de-novo-binder-design/259b22bb5b98935551eb2e79.png" alt="Surface-based interaction design" loading="lazy"><figcaption>Surface-based interaction design</figcaption></figure>
+<p><strong>RFdiffusion + ProteinMPNN</strong> is the popular current workflow. RFdiffusion is a diffusion-based backbone generator: an architect sketching the overall three-dimensional shape. ProteinMPNN is the interior designer, assigning an amino acid sequence that folds stably and functions. AlphaFold2 then scores the result (pLDDT, pTM) and predicts how it binds the target. The success rate of this pipeline is high enough that many groups need only screen a few dozen designs to obtain a usable binder.</p>
+<p>The newer <strong>BindCraft</strong> represents the next leap and was formally published in <em>Nature</em> days ago. It co-folds target and binder from the start, simulating their interaction in real time. That dynamic strategy handles the <strong>flexible conformational changes</strong> of a binding interface better, reaching 10–100% success on some difficult targets: precise design in one step.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/cadf6f045a7ca70caf8ad870.png" alt="The RFdiffusion, ProteinMPNN and AlphaFold2 workflow" loading="lazy"><figcaption>The RFdiffusion, ProteinMPNN and AlphaFold2 workflow</figcaption></figure>
+<h2 id="04-bench-to-bedside-where-designed-proteins-are-already-used">04 — Bench to bedside: where designed proteins are already used</h2>
+<p>If AI protein design is a new scalpel, its applications are spreading quickly across biomedicine.</p>
+<p><strong>Against toxins: a new route to antivenom.</strong> Snake venom has long been a hard problem for antiserum therapy, which traditionally requires immunizing animals and extracting antibodies, an expensive and cumbersome process. The <strong>Baker lab</strong> used RFdiffusion against <strong>α-neurotoxins and cytotoxins</strong> to design a series of small binding proteins. They are extremely thermostable (some Tm above 95 °C) and reach nanomolar to picomolar affinity. Most striking: in animal models, dosing even 15 minutes after envenomation gave 100% survival. This may be the shape of future antitoxin therapy: no animal immunization, designed entirely in silico, able to respond quickly to new toxin variants.</p>
+<blockquote><p>"Note that the Baker lab did not design antivenom antibodies directly but de novo mini-binders. Antibodies are harder to design, and mini-binders are more stable and easier to produce at scale."</p></blockquote>
+<figure><img src="../images/cell-review-de-novo-binder-design/8de8eb65e052bab248feb7a4.png" alt="Mini-binders against snake venom toxins" loading="lazy"><figcaption>Mini-binders against snake venom toxins</figcaption></figure>
+<p><strong>Precise control of the immune system.</strong> The complexity of immune signalling makes drug development a game of whack-a-mole. Conventional <strong>TNF-α</strong> inhibitors block both TNFR1 and TNFR2, even though TNFR2 is anti-inflammatory. With AI design, researchers obtained antagonists that target only <strong>TNFR1</strong>, avoiding that side effect. More neatly, by switching to a <strong>partial diffusion</strong> optimisation strategy, the same workflow yielded agonists for OX40 and 4-1BB that activate T cells and strengthen antitumour immunity. These designs beat natural ligands on activity and add small size, high stability and potential oral availability, giving immunotherapy a new toolbox.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/44787446d992a663d81ef6d3.png" alt="Selective cytokine receptor agonists and antagonists" loading="lazy"><figcaption>Selective cytokine receptor agonists and antagonists</figcaption></figure>
+<p><strong>Emerging frontiers: gene editing and antimicrobial resistance.</strong> Applications keep expanding. Anti-<strong>CRISPR</strong> proteins (Alcrs) give gene editing a brake, enabling finer spatiotemporal control. Antibacterial proteins designed against the heme-uptake systems of resistant bacteria offer a new angle on global antimicrobial resistance. AI has even produced high-affinity binders against intrinsically <strong>disordered protein regions (IDPs)</strong>, long considered undruggable. Together these describe a future in which protein drugs are not limited to a handful of targets but can be tailored to a wide range of biological processes.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/acb7d4c36eeab8f91dad89d7.png" alt="Designed proteins against CRISPR and resistant bacteria" loading="lazy"><figcaption>Designed proteins against CRISPR and resistant bacteria</figcaption></figure>
+<h2 id="05-challenges-technical-limits">05 — Challenges: technical limits</h2>
+<p>Like every review, this one sets out the open problems.</p>
+<p><strong>Technical barriers and resource distribution.</strong> Running BindCraft, RFdiffusion and similar models efficiently needs serious GPU capacity, which not every non-computational lab or small company can afford. Successful design also requires a deep understanding of the target's structural biology, so teams need both computational and experimental expertise.</p>
+<p><strong>The gap between prediction and experiment.</strong> Metrics such as pLDDT and pAE_interaction correlate reasonably with experimental success, but far from perfectly. Some designs that look excellent in silico fail to fold, fail to stay soluble, or fail to bind. Closing that gap needs more high-quality experimental data feeding back into training; open databases such as the Protein Design Archive are helping.</p>
+<p><strong>Limited target scope.</strong> Most successes are still on relatively rigid, surface-exposed targets. Highly dynamic membrane proteins, glycosylated proteins and protein–nucleic acid complexes remain hard. Widening the range requires algorithms that handle flexibility, interfacial water and chemical modifications better.</p>
+<h2 id="06-code-to-complex-a-new-era-for-binder-design">06 — "Code to Complex": a new era for binder design</h2>
+<p>"Code to Complex" carries two meanings at once: code as computer code, and code as the code of life in a protein sequence. The title captures the essence of the change: we are moving from reading and writing the genetic code to writing functional modules of life.</p>
+<p>What this review shows is not just a series of technical advances but the birth of a new paradigm. Protein design is turning from an art into an engineering discipline; from intuition and experience toward data and algorithms; from imitating nature to surpassing it.</p>
+<p>Future protein design will be more precise, more general and more accessible. Perhaps soon, designing a binder against a newly emerged pathogen will be as simple as building a web page today: enter the target, choose the design parameters, press generate.</p>
+<p>At that point we may truly realize Richard Feynman's line: <strong>"What I cannot create, I do not understand."</strong> AI is giving us that creative ability: not only to understand life, but to design it.</p>
+<figure><img src="../images/cell-review-de-novo-binder-design/667cc7794d8ec7d33c7272e9.jpg" alt="What I cannot create, I do not understand" loading="lazy"><figcaption>What I cannot create, I do not understand</figcaption></figure>
+  </div>
+  <div class="post-foot">
+    <p class="source">Originally published in Chinese on WeChat, September 5, 2025, as
+      <a href="https://mp.weixin.qq.com/s/lFq2eXQPiZAyEuZUcJ1EfQ" rel="noopener">Cell子刊综述 | AI结合蛋白从头设计“编年史”</a>.</p>
+    <p>Translation and figures by Yitian Xiao. Corrections are welcome by
+      <a href="https://github.com/Yitian12321/yitian-aidd-blog/issues">opening an issue</a>.</p>
+  </div>
+  <nav class="post-nav">
+<a href="../posts/rfdiffusion-trilogy.html">← From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a>
+<a href="../posts/hallucination-is-all-you-need.html">Hallucination Is All You Need? Protein Hallucination Design After BindCraft →</a>
+  </nav>
+</article>
+
+  </div>
+</main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
