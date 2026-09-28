@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About · Yitian&#x27;s AIDD Blog</title>
-<meta name="description" content="English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.">
-<meta name="author" content="Yitian Xiao">
-<meta property="og:title" content="About · Yitian&#x27;s AIDD Blog">
-<meta property="og:description" content="English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/about.html">
-<link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="feed.xml">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-<div class="layout">
-<aside class="sidebar">
-  <div class="profile">
-    <a href="index.html"><img class="avatar" src="images/portrait.jpg" alt="Yitian Xiao"></a>
-    <div class="name">Yitian Xiao</div>
-    <p class="tagline">AI4Protein: generative protein and antibody design, structure prediction, and what the models still get wrong.</p>
-  </div>
-  <div class="social">
-    <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
-    <a href="feed.xml" title="RSS" aria-label="RSS feed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0Z"/><path d="M1.82 8.4v3.05c5.93 0 10.73 4.8 10.73 10.73h3.05c0-7.6-6.18-13.78-13.78-13.78Z"/><path d="M1.82 1.82v3.05C10.5 4.87 17.5 11.87 17.5 20.55h3.05c0-11.98-9.75-21.73-21.73-21.73Z"/></svg></a>
-  </div>
-  <nav>
-    <a href="index.html">Posts</a>
-    <a href="tags.html">Tags</a>
-    <a href="about.html" class="active">About</a>
-  </nav>
-  <div class="recent">
-    <h2>Recent posts</h2>
-    <ul>
-<li><a href="posts/esmfold2-emergence-point.html">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point?</a><time>Jun 1, 2026</time></li>
-<li><a href="posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era</a><time>Dec 15, 2025</time></li>
-<li><a href="posts/protein-hunter.html">Protein Hunter: Structural Hallucination as a Design Engine</a><time>Oct 17, 2025</time></li>
-<li><a href="posts/rfdiffusion-trilogy.html">From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a><time>Sep 24, 2025</time></li>
-<li><a href="posts/cell-review-de-novo-binder-design.html">A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design</a><time>Sep 5, 2025</time></li>
-<li><a href="posts/hallucination-is-all-you-need.html">Hallucination Is All You Need? Protein Hallucination Design After BindCraft</a><time>Aug 14, 2025</time></li>
-    </ul>
-  </div>
-  <div class="sidebar-foot">
-    Chinese originals on WeChat<br><em>AIDD小白随想录</em>
-    <button class="theme-toggle" id="theme-toggle" type="button">Toggle theme</button>
-  </div>
-</aside>
-<main class="main">
-  <div class="wrap">
+"""Profile page content for Yitian's AIDD Blog.
 
+Kept in its own module so the page can be rewritten without touching build.py.
+build.py imports PROFILE_HTML and drops it into the About page slot.
+"""
+
+from __future__ import annotations
+
+PROFILE_HTML = """
 <section class="profile-hero">
   <img class="profile-hero-img" src="images/hero.jpg" alt="Yitian Xiao in the mountains">
   <div class="profile-head">
@@ -208,10 +165,4 @@
 
 <p class="profile-note">Corrections are welcome: open an issue on the repository, or email me. The Chinese
   originals are linked at the end of every post and remain the authoritative version if wording differs.</p>
-
-  </div>
-</main>
-</div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+"""

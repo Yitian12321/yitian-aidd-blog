@@ -202,3 +202,45 @@ figcaption { margin-top: 10px; font-size: 13.5px; line-height: 1.6; color: var(-
   .main { margin: 0; padding: 0; }
   a { color: inherit; }
 }
+
+/* ---------- profile page ---------- */
+
+.profile-hero { margin: -6px 0 30px; }
+.profile-hero-img {
+  width: 100%; height: 268px; object-fit: cover; object-position: center 58%;
+  border-radius: var(--radius); border: 1px solid var(--border); display: block;
+}
+.profile-head { display: flex; gap: 20px; align-items: flex-end; margin-top: -58px; padding: 0 24px; }
+.profile-photo {
+  width: 132px; height: 132px; border-radius: 50%; object-fit: cover;
+  border: 4px solid var(--bg); box-shadow: 0 2px 14px rgba(16, 24, 40, 0.16); background: var(--bg); flex: none;
+}
+.profile-head h1 { margin: 0 0 4px; font-size: 30px; letter-spacing: -0.02em; }
+.profile-sub { margin: 0 0 6px; font-size: 15px; color: var(--text-soft); }
+.profile-links { margin: 0; font-size: 14px; color: var(--text-faint); }
+.profile-lede { margin: 24px 0 4px; font-size: 17px; }
+.profile-note { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); }
+
+.timeline { list-style: none; margin: 0 0 10px; padding: 0; }
+.timeline > li {
+  display: grid; grid-template-columns: 138px 1fr; gap: 18px;
+  padding: 15px 0; border-top: 1px solid var(--border);
+}
+.timeline > li:first-child { border-top: 0; }
+.tl-when { font-size: 13px; color: var(--text-faint); padding-top: 3px; }
+.tl-what { font-size: 15.5px; }
+.tl-what .tl-role { color: var(--text-soft); }
+.tl-what .tl-where { color: var(--text-faint); font-size: 13.5px; }
+.tl-what ul { margin: 8px 0 0; padding-left: 1.1em; }
+.tl-what li { margin-bottom: 5px; }
+
+.chips { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.pub { margin: 0 0 14px; font-size: 15px; }
+.pub .pub-meta { color: var(--text-faint); font-size: 13.5px; }
+
+@media (max-width: 640px) {
+  .profile-hero-img { height: 190px; }
+  .profile-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: -46px; padding: 0 4px; }
+  .profile-photo { width: 104px; height: 104px; }
+  .timeline > li { grid-template-columns: 1fr; gap: 4px; }
+}

@@ -29,8 +29,8 @@ SITE = {
     "url": "https://yitian12321.github.io/yitian-aidd-blog",
     "title": "Yitian's AIDD Blog",
     "author": "Yitian Xiao",
-    "tagline": "Notes on AI-driven protein and binder design.",
-    "blurb": "I write about AI for protein design in Chinese on WeChat. This is the English version of those posts, with the figures carried over.",
+    "tagline": "AI4Protein: generative protein and antibody design, structure prediction, and what the models still get wrong.",
+    "blurb": "English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.",
     "github": "https://github.com/Yitian12321",
     "wechat_account": "AIDD小白随想录",
 }
@@ -46,6 +46,9 @@ TAG_LABELS = {
     "review": "Review",
     "antibody": "Antibody",
     "enzyme-design": "Enzyme design",
+    "protein-language-models": "Protein language models",
+    "esm": "ESM",
+    "world-model": "World models",
 }
 
 
@@ -240,7 +243,7 @@ BASE = """<!DOCTYPE html>
 <div class="layout">
 <aside class="sidebar">
   <div class="profile">
-    <a href="{{prefix}}index.html"><img class="avatar" src="{{prefix}}images/avatar.png" alt="{{author}}"></a>
+    <a href="{{prefix}}index.html"><img class="avatar" src="{{prefix}}images/portrait.jpg" alt="{{author}}"></a>
     <div class="name">{{author}}</div>
     <p class="tagline">{{tagline}}</p>
   </div>
@@ -567,13 +570,12 @@ def build() -> int:
         encoding="utf-8",
     )
 
-    # about
-    about_path = PAGES / "about.md"
-    if about_path.exists():
-        meta, body = parse_front_matter(about_path.read_text(encoding="utf-8"))
-        body_html, _ = render_markdown(body, "")
-        content = fill(PAGE, title=html.escape(meta.get("title", "About")), body=body_html)
-    else:
+    # about / profile page (content lives in profile.py)
+    try:
+        from profile import PROFILE_HTML as _profile_html
+        content = _profile_html
+    except Exception as exc:  # noqa: BLE001
+        print(f"warning: profile.py unavailable ({exc}); using the simple about page")
         content = fill(PAGE, title="About", body=f"<p>{html.escape(SITE['blurb'])}</p>")
     (DOCS / "about.html").write_text(
         page_shell(content, "", title=f"About · {SITE['title']}", description=SITE["blurb"],

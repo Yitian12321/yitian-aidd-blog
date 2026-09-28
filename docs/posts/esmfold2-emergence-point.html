@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point? · Yitian&#x27;s AIDD Blog</title>
+<meta name="description" content="Biohub and EvolutionaryScale&#x27;s new paper chains ESMC, ESMFold2, therapeutic binder design, sparse-autoencoder interpretability and a 6.8-billion-sequence atlas into one argument about emergence in protein language models. Reading the chain, and where it stops.">
+<meta name="author" content="Yitian Xiao">
+<meta property="og:title" content="Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point? · Yitian&#x27;s AIDD Blog">
+<meta property="og:description" content="Biohub and EvolutionaryScale&#x27;s new paper chains ESMC, ESMFold2, therapeutic binder design, sparse-autoencoder interpretability and a 6.8-billion-sequence atlas into one argument about emergence in protein language models. Reading the chain, and where it stops.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/posts/esmfold2-emergence-point.html">
+<link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="../feed.xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="profile">
+    <a href="../index.html"><img class="avatar" src="../images/portrait.jpg" alt="Yitian Xiao"></a>
+    <div class="name">Yitian Xiao</div>
+    <p class="tagline">AI4Protein: generative protein and antibody design, structure prediction, and what the models still get wrong.</p>
+  </div>
+  <div class="social">
+    <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+    <a href="../feed.xml" title="RSS" aria-label="RSS feed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0Z"/><path d="M1.82 8.4v3.05c5.93 0 10.73 4.8 10.73 10.73h3.05c0-7.6-6.18-13.78-13.78-13.78Z"/><path d="M1.82 1.82v3.05C10.5 4.87 17.5 11.87 17.5 20.55h3.05c0-11.98-9.75-21.73-21.73-21.73Z"/></svg></a>
+  </div>
+  <nav>
+    <a href="../index.html" class="active">Posts</a>
+    <a href="../tags.html">Tags</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <div class="recent">
+    <h2>Recent posts</h2>
+    <ul>
+<li><a href="../posts/esmfold2-emergence-point.html">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point?</a><time>Jun 1, 2026</time></li>
+<li><a href="../posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era</a><time>Dec 15, 2025</time></li>
+<li><a href="../posts/protein-hunter.html">Protein Hunter: Structural Hallucination as a Design Engine</a><time>Oct 17, 2025</time></li>
+<li><a href="../posts/rfdiffusion-trilogy.html">From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a><time>Sep 24, 2025</time></li>
+<li><a href="../posts/cell-review-de-novo-binder-design.html">A Cell Review, and the Chronicle of AI-Driven De Novo Binder Design</a><time>Sep 5, 2025</time></li>
+<li><a href="../posts/hallucination-is-all-you-need.html">Hallucination Is All You Need? Protein Hallucination Design After BindCraft</a><time>Aug 14, 2025</time></li>
+    </ul>
+  </div>
+  <div class="sidebar-foot">
+    Chinese originals on WeChat<br><em>AIDD小白随想录</em>
+    <button class="theme-toggle" id="theme-toggle" type="button">Toggle theme</button>
+  </div>
+</aside>
+<main class="main">
+  <div class="wrap">
+<article class="post">
+  <h1 class="post-title">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point?</h1>
+  <div class="post-meta">
+    <time datetime="2026-06-01">June 1, 2026</time>
+    <span class="dot">·</span><span>13 min read</span>
+<span class="dot">·</span><span class="tags"><a class="tag" href="../tags/protein-language-models.html">Protein language models</a><a class="tag" href="../tags/structure-prediction.html">Structure prediction</a><a class="tag" href="../tags/protein-design.html">Protein design</a><a class="tag" href="../tags/esm.html">ESM</a><a class="tag" href="../tags/world-model.html">World models</a><a class="tag" href="../tags/paper-notes.html">Paper notes</a></span>
+  </div>
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+<li><a href="#01-from-esmfold1-to-esmfold2-the-language-model-route-catches-up-on-complexes">01 — From ESMFold1 to ESMFold2: the language-model route catches up on complexes</a></li>
+<li><a href="#02-against-alphafold3-boltz-and-chai-what-is-different-about-esmfold2">02 — Against AlphaFold3, Boltz and Chai: what is different about ESMFold2?</a></li>
+<li><a href="#03-against-rfdiffusion-and-bindcraft-less-a-generator-more-a-scorer-and-prior-inside-a-search-engine">03 — Against RFdiffusion and BindCraft: less a generator, more a scorer and prior inside a search engine</a></li>
+<li><a href="#04-sparse-autoencoders-does-the-model-really-hold-a-dictionary-of-protein-concepts">04 — Sparse autoencoders: does the model really hold a dictionary of protein concepts?</a></li>
+<li><a href="#05-esm-atlas-putting-protein-dark-matter-into-one-coordinate-system">05 — ESM Atlas: putting protein dark matter into one coordinate system</a></li>
+<li><a href="#06-where-to-stay-calm">06 — Where to stay calm</a></li>
+<li><a href="#07-closing">07 — Closing</a></li>
+  </ol>
+</div>
+  <div class="post-body">
+<figure><img src="../images/esmfold2-emergence-point/fig-01.jpg" alt="The paper under discussion" loading="lazy"><figcaption>The paper under discussion</figcaption></figure>
+<blockquote><p>Paper: <em>Language Modeling Materializes a World Model of Protein Biology</em> "If protein language models keep scaling, what actually happens?"</p></blockquote>
+<p>The AI world has been taught the scaling lesson many times over: more parameters, more data, more compute, and the loss falls along some predictable curve. Then, past a certain scale, abilities that seemed like they should not exist yet suddenly become usable.</p>
+<p>So is there an equivalent law inside protein language models? Starting from predicting amino-acid tokens, does a model eventually emerge with an internal understanding of protein structure, function, interactions and even the design space? That is the question this new paper from Biohub and EvolutionaryScale most wants to answer.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-02.jpg" alt="ESMFold2 and protein design" loading="lazy"><figcaption>ESMFold2 and protein design</figcaption></figure>
+<p>The title is ambitious: <em>Language Modeling Materializes a World Model of Protein Biology</em>. It is a claim that deserves suspicion, but reading through, the authors are not trying to show that a model gained a few points. They are trying to connect a whole system: from the protein language model ESMC to the structure predictor ESMFold2, from experimental validation of therapeutic binder design to sparse autoencoders that dissect the model's internal features, and finally out to an ESM Atlas covering 6.8 billion protein sequences and 1.1 billion predicted structures.</p>
+<p>In other words, the paper is not really about a single model. It is about a chain of capabilities, and about whether the scaling law of protein language models is pushing them through some emergence point, from sequence statistics learners into a unified stage of structure prediction, complex modelling, binder design and world-scale mapping.</p>
+<p>So let us go from ESMFold1 to ESMFold2, and put it on the same page as AlphaFold3, Boltz, Chai, RFdiffusion and BindCraft to see what is actually distinctive.</p>
+<h2 id="01-from-esmfold1-to-esmfold2-the-language-model-route-catches-up-on-complexes">01 — From ESMFold1 to ESMFold2: the language-model route catches up on complexes</h2>
+<p>ESMFold1's selling point was clear: no MSA, just the ESM2 protein language model representation, folding a structure quickly from a single sequence.</p>
+<p>That route differs fundamentally from the AlphaFold family. AlphaFold2's strength comes largely from the evolutionary covariation in MSAs; ESMFold1 compresses those evolutionary statistics into language model parameters ahead of time, so inference needs no homology search, only folding on top of ESM2 representations.</p>
+<p>The advantages are speed, simplicity and better behaviour on orphan proteins and designed sequences. The weakness was equally clear: ESMFold1 was good at single-chain prediction and was not the main tool for complex biomolecular interactions, especially antibody–antigen, protein–protein interfaces and protein–ligand tasks.</p>
+<p>ESMFold2 is positioned as systematic homework on exactly that weakness.</p>
+<p>It no longer only predicts monomer structure from a language model representation; it wires ESMC representations into an all-atom folding architecture aimed at complex interactions. Three changes matter most.</p>
+<p>First, the backbone moves from ESM2 to <strong>ESMC</strong>, with 300M, 600M and 6B parameter versions and training data expanded from roughly 50 million sequences in the ESM2 era to about 2.8 billion, including large amounts of metagenomic sequence. It has read not only the familiar faces in classic databases but something closer to the real distribution of proteins in nature.</p>
+<p>Second, ESMFold2 explicitly builds and iteratively updates a <strong>pair representation</strong>. It aggregates the layer representations of a frozen ESMC-6B, projects them into two-dimensional pair space, and updates them repeatedly with recurrent folding layers. Pair representations matter because a structure is not a property of individual residues; it is the organization of residue–residue, chain–chain and atom–atom relationships.</p>
+<p>Third, ESMFold2 generates atomic coordinates with a <strong>diffusion transformer</strong>, which brings it closer to the current all-atom structure prediction paradigm and lets it handle more complex molecular interactions.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-03.png" alt="Figure 1: as pretraining compute grows, structural and functional information in ESMC representations keeps improving" loading="lazy"><figcaption>Figure 1: as pretraining compute grows, structural and functional information in ESMC representations keeps improving</figcaption></figure>
+<p>Figure 1 is really the logical starting point of the paper. As pretraining compute increases, the structural and functional information in ESMC representations keeps improving, following a near log-linear scaling trend.</p>
+<p>That sentence matters. It means scale does not just make the model better at guessing amino acids; it makes the model better at capturing folding, function and evolutionary constraints. A falling MLM loss starts to cash out as a stronger biological representation.</p>
+<p>Reading the ESM line as one evolutionary ladder makes this clearer. In the ESM1/ESM2 stage, contact, fold and function information begins to appear in the representations. With ESMFold1, those representations are strong enough to support single-chain structure prediction. With ESMC and ESMFold2, the authors try to show they are strong enough for complex prediction, antibody–antigen folding and binder search.</p>
+<p>I prefer to read ESMFold2 as a downstream cashing-in of the protein language model scaling law. It is not a structure prediction miracle trained from scratch; it is a set of new capabilities released by plugging a stronger ESMC representation into pair representations, recurrent folding layers and a diffusion head.</p>
+<p>That is also the generational difference from ESMFold1. ESMFold1 proved that language model representations can fold proteins; ESMFold2 tries to prove that they can support complex interaction prediction and enter a design search loop. In a sense, that is a waypoint in moving protein foundation models from representation emergence toward capability emergence.</p>
+<h2 id="02-against-alphafold3-boltz-and-chai-what-is-different-about-esmfold2">02 — Against AlphaFold3, Boltz and Chai: what is different about ESMFold2?</h2>
+<p>On tasks alone, ESMFold2 sits easily inside the competition between all-atom complex predictors such as AlphaFold3, Boltz-1/2, Chai-1 and Protenix. They all answer the same question: given biomolecular sequences and context, predict the complex structure.</p>
+<p>But ESMFold2 takes a different route.</p>
+<p>AlphaFold3, Boltz and Chai are closer to an <strong>explicit structural modelling route</strong>: they are organized around MSAs, templates, pair representations and diffusion modules, learning a mapping from inputs to complex coordinates directly. Their strength is a complete structural modelling system, especially suited to multi-molecular complexes, ligands and nucleic acids.</p>
+<p>ESMFold2 is closer to a <strong>language-model-representation-first route</strong>: learn a general protein representation from massive sequence data with ESMC, then attach that representation to a structure prediction trunk and a diffusion head. It gives up the earlier "no MSA" posture and the paper offers an MSA-conditioned mode, but the selling point is that even in a single-sequence setting it reaches strong complex prediction performance.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-04.png" alt="Benchmarks: DockQ pass rates across antibody–antigen, protein–protein and protein–ligand tasks" loading="lazy"><figcaption>Benchmarks: DockQ pass rates across antibody–antigen, protein–protein and protein–ligand tasks</figcaption></figure>
+<p>The numbers are direct. With single-sequence input, ESMFold2 reaches a 50% ± 2% DockQ pass rate on FoldBench antibody–antigen, 70% ± 1% on protein–protein interfaces and 57% ± 1% on protein–ligand tasks. With MSA, antibody–antigen and protein–protein pass rates rise to 53% ± 2% and 76% ± 1%.</p>
+<p>Speed is more interesting. With 10 loops and 200 diffusion steps, ESMFold2 predicts a 1024-residue structure in 15.8 seconds; ESMFold2-Fast needs 9.4 seconds. The paper stresses that both sit at the upper-right of the accuracy–throughput Pareto frontier.</p>
+<p>That matters for AIDD. If structure prediction is only accurate, it is an analysis tool. If it is accurate and fast, it becomes a primitive inside the design loop. ESMFold2's distinctiveness is exactly there: rather than chasing the highest accuracy alone, it combines single-sequence representation, complex folding and high-throughput inference to serve binder search.</p>
+<h2 id="03-against-rfdiffusion-and-bindcraft-less-a-generator-more-a-scorer-and-prior-inside-a-search-engine">03 — Against RFdiffusion and BindCraft: less a generator, more a scorer and prior inside a search engine</h2>
+<p>Talk about protein design and RFdiffusion and BindCraft come to mind.</p>
+<p>RFdiffusion generates a backbone first, then inverse-folds a sequence with tools such as ProteinMPNN; it is essentially a <strong>structure generator</strong>, good at generating new backbones under constraints, especially motif scaffolding and binder backbone generation.</p>
+<p>BindCraft takes another route: treat AlphaFold-Multimer as a differentiable scoring function and back-propagate through sequence space by hallucination. It does not generate backbones and filter; it lets the structure predictor take part in sequence–structure co-design.</p>
+<p>The ESMC + ESMFold2 binder design route sits between the two but is not identical to either. It is closer to a system of <strong>language model prior + structure prediction scoring + large-scale search</strong>: ESMC makes candidate sequences look like proteins nature could fold and express, ESMFold2 judges whether a candidate forms a sensible interface with the target, and metrics such as ipTM and distograms rank the flood of candidates so that a few reach the bench.</p>
+<p>So ESMFold2 here is not RFdiffusion generating structures from nothing, nor a fully differentiable hallucination optimisation of the BindCraft kind. It turns a folding model into a <strong>discriminator and structural prior</strong> for high-throughput design search.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-05.png" alt="Binder design and experimental validation" loading="lazy"><figcaption>Binder design and experimental validation</figcaption></figure>
+<p>The authors designed minibinders and single-chain antibody fragments (scFvs) against five targets — PDGFRβ, EGFR, PD-L1, CD45 and CTLA-4 — and validated them with BLI, cell staining, competition ELISA, PD-L1/PD-1 functional blocking assays and cryo-EM.</p>
+<p>A few results deserve pulling out.</p>
+<p>First, adding inference-time compute does raise experimental hit rates. In the harder antibody design setting the hit rate went from 12.1% to 21.0%. The scale and quality of digital experiments can be converted into wet-lab hit rate.</p>
+<p>Second, several designs reach nanomolar affinity: an EGFR minibinder around 0.29 nM, a CTLA-4 minibinder around 0.068 nM, a PD-L1 minibinder around 1.7 nM. For early de novo binder design, that is not weak binding.</p>
+<p>Third, the cryo-EM structure of the EGFR–minibinder complex is about 1.204 Å RMSD from the computational model, meaning that at least in this case the designed binding conformation was realized experimentally.</p>
+<p>The most useful takeaway is not that the model succeeds in one shot. It is that ESMFold2's efficiency makes large-scale structural screening practical, compressing expensive experimental exploration into a loop of many in-silico searches and a few experimental checks.</p>
+<h2 id="04-sparse-autoencoders-does-the-model-really-hold-a-dictionary-of-protein-concepts">04 — Sparse autoencoders: does the model really hold a dictionary of protein concepts?</h2>
+<p>The usual objection to protein foundation models is that they are just very large correlation machines, and that talk of a world model is a nice narrative. This paper does not answer only with benchmarks; it dissects ESMC's latent space with a sparse autoencoder (SAE). Roughly, an SAE breaks a high-dimensional neural representation into sparser, more interpretable features, looking for the "concept directions" the model reuses internally.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-06.png" alt="Figure 4: the hierarchy of features learned by ESMC" loading="lazy"><figcaption>Figure 4: the hierarchy of features learned by ESMC</figcaption></figure>
+<p>Figure 4 shows the hierarchical organization of those features, from local amino-acid properties and secondary structure through tertiary motifs to domain and fold level, low-complexity regions, cellular localization and functional sites.</p>
+<p>The paper shows some representative features: catalytic motifs, disulfide bonds, beta-barrel scaffolds, DNA polymerase clamp domains, membrane helix transitions, glycoside hydrolase active sites. The model's interior is not just fuzzy sequence similarity; directions corresponding to biochemistry, structural biology and protein function appear inside it.</p>
+<p>The implication is that a foundation model may be more than an embedding extractor. If SAE features correspond stably to structural and functional concepts, a black-box scorer can become a tool for mining mechanistic hints, retrieving remote functional homologues, or helping annotate targets.</p>
+<p>Of course, these "concepts" are still statistical structure inside model space, not a complete biophysical mechanism. It is more of an entry point: a chance to observe how the model organizes the protein world internally.</p>
+<h2 id="05-esm-atlas-putting-protein-dark-matter-into-one-coordinate-system">05 — ESM Atlas: putting protein dark matter into one coordinate system</h2>
+<p>The paper ends by pulling the view out to a very large scale.</p>
+<p>Using the ESMC and ESMFold2 representation system, the authors built the ESM Atlas, covering 6.8 billion protein sequences and predicting 1.1 billion atomic-resolution structures. The scale is striking: not annotation for a handful of model organisms, but an attempt to place a large part of the protein space that life on Earth has explored into a single coordinate system.</p>
+<figure><img src="../images/esmfold2-emergence-point/fig-07.png" alt="The ESM Atlas map: structure and function relationships across natural protein space" loading="lazy"><figcaption>The ESM Atlas map: structure and function relationships across natural protein space</figcaption></figure>
+<p>The most striking visual is the large UMAP map. Each point is not just a sequence but a projection of protein family, structure, function and environmental source into the model's representation space. The authors go on to show the RNase H region, the Cas12/TnpB region, and connections between uncharacterized metagenomic proteins and known functional features.</p>
+<p>The point is that many sequences have no clear annotation in traditional databases, and some are barely similar to anything known. But if they activate function-related features in model space, they can be pulled back into an interpretable biological context.</p>
+<p>ESM Atlas is, in other words, a map of protein dark matter. It cannot replace experiments, but it can tell you which unknown proteins might be worth a look, where remote links between families might exist, and which structural or functional themes recur across environments.</p>
+<p>This is also where the ESM family differs from many pure structure predictors. The dominant narrative of AlphaFold-class models is: given an object, predict its structure. The dominant narrative of ESM Atlas is closer to: given the whole natural protein space, organize structure–function relationships.</p>
+<h2 id="06-where-to-stay-calm">06 — Where to stay calm</h2>
+<p>The results are impressive, but I would keep at least three boundaries in mind.</p>
+<p>First, ESMFold2's benchmarks are strong, but success at structure prediction does not mean every downstream function is reliable. Dynamics, conformational change, membrane environments, post-translational modifications and intracellular concentration effects are not fully covered by a single static structure model.</p>
+<p>Second, binder design here has experimental validation, which is one of the paper's weightiest contributions. But those results come from the authors' chosen targets, pipeline and selection strategy. Transferred to harder targets, tighter developability constraints or a stricter in vivo setting, the hit rates may not carry over.</p>
+<p>Third, "world model" is an attractive phrase, but I read it as: the model learned a representation system usable for predicting, designing and organizing protein biology. It is not a digital life scientist holding complete causal mechanisms. It can suggest leads and accelerate search, but experiments and mechanistic work still close the loop.</p>
+<p>Seen this way, ESMFold2's value is not replacing AlphaFold3, Boltz, Chai, RFdiffusion or BindCraft. It completes a distinctive piece of the puzzle: using large-scale protein language model representations to connect high-throughput complex folding, therapeutic binder search, model interpretability and a life-scale map.</p>
+<h2 id="07-closing">07 — Closing</h2>
+<p>Looking back, the most interesting thing about ESMFold2 is not that it is more accurate than ESMFold1, nor that it beats someone on a benchmark. It pushes the ESM language-model route from single-chain structure prediction into complex interaction prediction and a closed experimental design loop.</p>
+<p>If ESMFold1 showed that MSAs are not the only door into structure prediction, ESMFold2 goes further: when the language model representation is strong enough, the pair representation efficient enough and diffusion folding fast enough, it can become a primitive inside the AIDD design loop.</p>
+<p>Next to RFdiffusion and BindCraft, the distinctiveness of ESMC + ESMFold2 is clear. It neither generates alone nor optimises by hallucination alone; it tries to turn the protein prior learned from natural sequence space into a design platform that is searchable, interpretable and experimentally testable.</p>
+<p>Perhaps in a few years this paper will matter less for how fast or accurate ESMFold2 is, and more for pushing the protein language model scaling law into something more concrete: scale produces representations, and representations can be converted into structure, design, explanation and discovery.</p>
+<p>The end of protein language models may not be reading sequences. It may be learning to read what the vast space of life is hiding.</p>
+  </div>
+  <div class="post-foot">
+    <p class="source">Originally published in Chinese on WeChat, June 1, 2026, as
+      <a href="https://mp.weixin.qq.com/s/4j-mDjXFCg-wkNdp1Ngp9w" rel="noopener">扎克伯格的蛋白世界模型： ESMFold2是否跨过了 AI4Protein 的“涌现点”？</a>.</p>
+    <p>Translation and figures by Yitian Xiao. Corrections are welcome by
+      <a href="https://github.com/Yitian12321/yitian-aidd-blog/issues">opening an issue</a>.</p>
+  </div>
+  <nav class="post-nav">
+<span></span>
+<a href="../posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era →</a>
+  </nav>
+</article>
+
+  </div>
+</main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
