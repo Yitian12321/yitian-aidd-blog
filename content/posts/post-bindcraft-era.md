@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: hallucination-design, binder-design, antibody, protein-design, paper-notes
 summary: BindCraft proved that back-propagating through AlphaFold works. Four follow-ups — BindEnergyCraft, FoldCraft, Germinal and mBER — each repair a different gap, and together they argue that the field's real contest is about where to put the constraints.
 source_url: https://mp.weixin.qq.com/s/IyWBFKdzQDE0WlF_uRTCng
+cover: images/hero.jpg
 source_title: 谈谈 “后BindCraft时代” 的蛋白幻觉设计模型
 ---
 

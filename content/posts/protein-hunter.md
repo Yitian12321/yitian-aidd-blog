@@ -4,6 +4,7 @@ date: 2025-10-17
 tags: hallucination-design, diffusion-models, structure-prediction, binder-design, paper-notes
 summary: AlphaFold3-class predictors hallucinate plausible structures even from all-X sequences. Protein Hunter turns that failure mode into a zero-shot design loop: hallucinate a structure, inverse-fold a sequence, re-predict, repeat.
 source_url: https://mp.weixin.qq.com/s/6rcJxw0d8TNgtIAP-tbw9Q
+cover: images/protein-hunter/a3aa121dfaffa1a6503e0f16.png
 source_title: MIT Sergey团队新作 | Protein Hunter：利用扩散模型的“结构幻觉”实现高效蛋白质设计
 ---
 

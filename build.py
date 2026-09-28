@@ -386,6 +386,7 @@ def load_posts() -> list[dict]:
                 "date": post_date,
                 "tags": tags,
                 "summary": meta.get("summary", ""),
+                "cover": meta.get("cover", ""),
                 "source_url": meta.get("source_url", ""),
                 "source_title": meta.get("source_title", ""),
                 "body": body,
@@ -409,7 +410,7 @@ def post_list_items(posts: list[dict], prefix: str) -> str:
         )
         cover = f"images/thumbs/{post['slug']}.jpg"
         if not (ROOT / cover).exists():
-            cover = first_image(post["body"])
+            cover = post.get("cover") or first_image(post["body"])
         thumb = (
             f'<a class="post-cover" href="{prefix}posts/{post["slug"]}.html" tabindex="-1" aria-hidden="true">'
             f'<img src="{prefix}{cover}" alt="" loading="lazy"></a>'
