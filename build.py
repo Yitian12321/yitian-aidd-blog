@@ -396,14 +396,28 @@ def load_posts() -> list[dict]:
     return posts
 
 
+def first_image(body: str) -> str:
+    match = re.search(r"!\[[^\]]*\]\(([^)\s]+)\)", body)
+    return match.group(1) if match else ""
+
+
 def post_list_items(posts: list[dict], prefix: str) -> str:
     blocks = []
     for post in posts:
         tags = "".join(
             f'<a class="tag" href="{prefix}tags/{t}.html">{TAG_LABELS.get(t, t)}</a>' for t in post["tags"]
         )
+        cover = f"images/thumbs/{post['slug']}.jpg"
+        if not (ROOT / cover).exists():
+            cover = first_image(post["body"])
+        thumb = (
+            f'<a class="post-cover" href="{prefix}posts/{post["slug"]}.html" tabindex="-1" aria-hidden="true">'
+            f'<img src="{prefix}{cover}" alt="" loading="lazy"></a>'
+            if cover else ""
+        )
         blocks.append(
             '<article class="post-item">'
+            '<div class="post-text">'
             f'<h2><a href="{prefix}posts/{post["slug"]}.html">{html.escape(post["title"])}</a></h2>'
             '<div class="meta">'
             f'<time datetime="{post["date"].isoformat()}">{pretty_date(post["date"])}</time>'
@@ -412,9 +426,11 @@ def post_list_items(posts: list[dict], prefix: str) -> str:
             "</div>"
             f'<p class="summary">{inline(post["summary"])}</p>'
             f'<div class="tags" style="margin-top:10px">{tags}</div>'
+            "</div>"
+            f"{thumb}"
             "</article>"
         )
-    return "\n".join(blocks)
+    return chr(10).join(blocks)
 
 
 def recent_sidebar(posts: list[dict], prefix: str) -> str:

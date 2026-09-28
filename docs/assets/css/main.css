@@ -110,7 +110,7 @@ img { max-width: 100%; height: auto; }
 
 /* post list */
 .post-list { display: flex; flex-direction: column; }
-.post-item { padding: 22px 0; border-top: 1px solid var(--border); }
+.post-item { padding: 22px 0; border-top: 1px solid var(--border); display: flex; gap: 22px; align-items: flex-start; }
 .post-item:first-child { border-top: 0; padding-top: 4px; }
 .post-item h2 { margin: 0 0 6px; font-size: 21px; font-weight: 620; line-height: 1.35; letter-spacing: -0.01em; }
 .post-item h2 a { color: var(--text); }
@@ -243,4 +243,19 @@ figcaption { margin-top: 10px; font-size: 13.5px; line-height: 1.6; color: var(-
   .profile-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 20px; padding: 0 4px; }
   .profile-photo { width: 104px; height: 104px; }
   .timeline > li { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* list covers (WeChat-style, right of each entry) */
+.post-text { flex: 1 1 auto; min-width: 0; }
+.post-cover { flex: none; display: block; }
+.post-cover img {
+  width: 132px; height: 132px; object-fit: cover; display: block;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--bg-soft);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.post-cover:hover img { transform: translateY(-2px); border-color: var(--accent); }
+
+@media (max-width: 560px) {
+  .post-item { gap: 14px; }
+  .post-cover img { width: 96px; height: 96px; border-radius: 8px; }
 }
