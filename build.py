@@ -29,8 +29,9 @@ SITE = {
     "url": "https://yitian12321.github.io/yitian-aidd-blog",
     "title": "Yitian's AIDD Blog",
     "author": "Yitian Xiao",
-    "tagline": "AI4Protein: generative protein and antibody design, structure prediction, and what the models still get wrong.",
-    "blurb": "English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.",
+    "tagline": "Working on hallucination-based AI4Protein design.",
+    "blurb": "Hi, this is Yitian. I'm documenting my thinking as I learn AIDD.",
+    "description": "English versions of my Chinese notes on AI4Protein design: hallucination-based binder and antibody design, structure prediction, and the papers behind them.",
     "github": "https://github.com/Yitian12321",
     "wechat_account": "AIDD小白随想录",
 }
@@ -486,7 +487,7 @@ def build() -> int:
         items=post_list_items(posts, ""),
     )
     (DOCS / "index.html").write_text(
-        page_shell(index, "", title=SITE["title"], description=SITE["blurb"],
+        page_shell(index, "", title=SITE["title"], description=SITE["description"],
                    canonical=f"{SITE['url']}/", og_type="website", nav="home", posts=posts),
         encoding="utf-8",
     )
@@ -578,7 +579,7 @@ def build() -> int:
         print(f"warning: profile.py unavailable ({exc}); using the simple about page")
         content = fill(PAGE, title="About", body=f"<p>{html.escape(SITE['blurb'])}</p>")
     (DOCS / "about.html").write_text(
-        page_shell(content, "", title=f"About · {SITE['title']}", description=SITE["blurb"],
+        page_shell(content, "", title=f"About · {SITE['title']}", description=SITE["description"],
                    canonical=f"{SITE['url']}/about.html", og_type="website", nav="about", posts=posts),
         encoding="utf-8",
     )
@@ -614,7 +615,7 @@ def build() -> int:
         '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">\n<channel>'
         f"<title>{html.escape(SITE['title'])}</title>"
         f"<link>{SITE['url']}/</link>"
-        f"<description>{html.escape(SITE['blurb'])}</description>"
+        f"<description>{html.escape(SITE['description'])}</description>"
         f"<language>en</language>"
         + "".join(items)
         + "</channel></rss>\n"

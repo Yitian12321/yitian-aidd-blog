@@ -13,7 +13,7 @@ PROFILE_HTML = """
     <img class="profile-photo" src="images/portrait.jpg" alt="Yitian Xiao">
     <div>
       <h1>Yitian Xiao</h1>
-      <p class="profile-sub">AI4Protein design &middot; generative protein and antibody engineering &middot; computational biology</p>
+      <p class="profile-sub">Hallucination-based AI4Protein design &middot; protein and antibody engineering &middot; computational biology</p>
       <p class="profile-links">
         <a href="mailto:yitianxi@andrew.cmu.edu">yitianxi@andrew.cmu.edu</a>
         &middot; <a href="https://github.com/Yitian12321">GitHub</a>
@@ -24,10 +24,11 @@ PROFILE_HTML = """
 </section>
 
 <p class="profile-lede">
-  I work on AI for protein and antibody design, end to end: from model development and in-silico screening
-  to the wet-lab validation that decides whether a design was worth making. I am starting an M.S. in
-  Computational Biology at Carnegie Mellon, after a B.S. in Bioinformatics at Zhejiang University and
-  two research internships on generative protein design.
+  I work on hallucination-based AI4Protein design: using structure prediction models as differentiable
+  scoring functions to search sequence space for new antibodies and binders, and following those designs
+  into the wet lab. Most recently I built XDCRCraft for de novo antibody design at XtalPi and ComplexDiff
+  for protein-glue design at Shanghai AI Lab. I am starting an M.S. in Computational Biology at Carnegie
+  Mellon, after a B.S. in Bioinformatics at Zhejiang University.
 </p>
 
 <h2>Experience</h2>
@@ -158,10 +159,11 @@ PROFILE_HTML = """
 </ul>
 
 <h2>What I write about</h2>
-<p>New models and papers in AI4Protein: binder and antibody design, structure prediction and its confidence
-  metrics, generative design loops, and the parts that do not work yet. I publish in Chinese on WeChat and keep
-  the English versions here, with figures carried over. See <a href="index.html">the post list</a>, or the
-  <a href="https://github.com/Yitian12321/yitian-aidd-blog">repository</a> for the source of this site.</p>
+<p>Papers and models in AI4Protein: hallucination and diffusion approaches to binder and antibody design,
+  structure prediction and what its confidence scores really mean, design loops that close in the lab, and the
+  parts that still do not work. I write in Chinese on WeChat and keep the English versions here, figures
+  included. Start with <a href="index.html">the post list</a>; the source of this site is on
+  <a href="https://github.com/Yitian12321/yitian-aidd-blog">GitHub</a>.</p>
 
 <p class="profile-note">Corrections are welcome: open an issue on the repository, or email me. The Chinese
   originals are linked at the end of every post and remain the authoritative version if wording differs.</p>

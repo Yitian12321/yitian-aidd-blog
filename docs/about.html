@@ -4,23 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About · Yitian&#x27;s AIDD Blog</title>
-<meta name="description" content="English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.">
+<meta name="description" content="English versions of my Chinese notes on AI4Protein design: hallucination-based binder and antibody design, structure prediction, and the papers behind them.">
 <meta name="author" content="Yitian Xiao">
 <meta property="og:title" content="About · Yitian&#x27;s AIDD Blog">
-<meta property="og:description" content="English versions of my Chinese notes on AI-driven protein and antibody design, with the figures carried over from WeChat.">
+<meta property="og:description" content="English versions of my Chinese notes on AI4Protein design: hallucination-based binder and antibody design, structure prediction, and the papers behind them.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/about.html">
 <link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="feed.xml">
-<link rel="icon" href="assets/favicon.svg?v=20260927213240" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/main.css?v=20260927213240">
+<link rel="icon" href="assets/favicon.svg?v=20260927214124" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css?v=20260927214124">
 </head>
 <body>
 <div class="layout">
 <aside class="sidebar">
   <div class="profile">
-    <a href="index.html"><img class="avatar" src="images/avatar.jpg?v=20260927213240" alt="Yitian Xiao"></a>
+    <a href="index.html"><img class="avatar" src="images/avatar.jpg?v=20260927214124" alt="Yitian Xiao"></a>
     <div class="name">Yitian Xiao</div>
-    <p class="tagline">AI4Protein: generative protein and antibody design, structure prediction, and what the models still get wrong.</p>
+    <p class="tagline">Working on hallucination-based AI4Protein design.</p>
   </div>
   <div class="social">
     <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
@@ -51,12 +51,12 @@
   <div class="wrap">
 
 <section class="profile-hero">
-  <img class="profile-hero-img" src="images/hero.jpg?v=20260927213240" alt="A designed protein resting on a chip, rendered in light">
+  <img class="profile-hero-img" src="images/hero.jpg?v=20260927214124" alt="A designed protein resting on a chip, rendered in light">
   <div class="profile-head">
-    <img class="profile-photo" src="images/portrait.jpg?v=20260927213240" alt="Yitian Xiao">
+    <img class="profile-photo" src="images/portrait.jpg?v=20260927214124" alt="Yitian Xiao">
     <div>
       <h1>Yitian Xiao</h1>
-      <p class="profile-sub">AI4Protein design &middot; generative protein and antibody engineering &middot; computational biology</p>
+      <p class="profile-sub">Hallucination-based AI4Protein design &middot; protein and antibody engineering &middot; computational biology</p>
       <p class="profile-links">
         <a href="mailto:yitianxi@andrew.cmu.edu">yitianxi@andrew.cmu.edu</a>
         &middot; <a href="https://github.com/Yitian12321">GitHub</a>
@@ -67,10 +67,11 @@
 </section>
 
 <p class="profile-lede">
-  I work on AI for protein and antibody design, end to end: from model development and in-silico screening
-  to the wet-lab validation that decides whether a design was worth making. I am starting an M.S. in
-  Computational Biology at Carnegie Mellon, after a B.S. in Bioinformatics at Zhejiang University and
-  two research internships on generative protein design.
+  I work on hallucination-based AI4Protein design: using structure prediction models as differentiable
+  scoring functions to search sequence space for new antibodies and binders, and following those designs
+  into the wet lab. Most recently I built XDCRCraft for de novo antibody design at XtalPi and ComplexDiff
+  for protein-glue design at Shanghai AI Lab. I am starting an M.S. in Computational Biology at Carnegie
+  Mellon, after a B.S. in Bioinformatics at Zhejiang University.
 </p>
 
 <h2>Experience</h2>
@@ -201,10 +202,11 @@
 </ul>
 
 <h2>What I write about</h2>
-<p>New models and papers in AI4Protein: binder and antibody design, structure prediction and its confidence
-  metrics, generative design loops, and the parts that do not work yet. I publish in Chinese on WeChat and keep
-  the English versions here, with figures carried over. See <a href="index.html">the post list</a>, or the
-  <a href="https://github.com/Yitian12321/yitian-aidd-blog">repository</a> for the source of this site.</p>
+<p>Papers and models in AI4Protein: hallucination and diffusion approaches to binder and antibody design,
+  structure prediction and what its confidence scores really mean, design loops that close in the lab, and the
+  parts that still do not work. I write in Chinese on WeChat and keep the English versions here, figures
+  included. Start with <a href="index.html">the post list</a>; the source of this site is on
+  <a href="https://github.com/Yitian12321/yitian-aidd-blog">GitHub</a>.</p>
 
 <p class="profile-note">Corrections are welcome: open an issue on the repository, or email me. The Chinese
   originals are linked at the end of every post and remain the authoritative version if wording differs.</p>
@@ -212,6 +214,6 @@
   </div>
 </main>
 </div>
-<script src="assets/js/main.js?v=20260927213240"></script>
+<script src="assets/js/main.js?v=20260927214124"></script>
 </body>
 </html>
