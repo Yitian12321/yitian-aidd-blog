@@ -243,7 +243,7 @@ BASE = """<!DOCTYPE html>
 <div class="layout">
 <aside class="sidebar">
   <div class="profile">
-    <a href="{{prefix}}index.html"><img class="avatar" src="{{prefix}}images/avatar.png" alt="{{author}}"></a>
+    <a href="{{prefix}}index.html"><img class="avatar" src="{{prefix}}images/avatar.jpg" alt="{{author}}"></a>
     <div class="name">{{author}}</div>
     <p class="tagline">{{tagline}}</p>
   </div>
