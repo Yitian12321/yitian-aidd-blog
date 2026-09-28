@@ -8,7 +8,7 @@ from __future__ import annotations
 
 PROFILE_HTML = """
 <section class="profile-hero">
-  <img class="profile-hero-img" src="images/hero.jpg" alt="Yitian Xiao in the mountains">
+  <img class="profile-hero-img" src="images/hero.jpg" alt="A designed protein resting on a chip, rendered in light">
   <div class="profile-head">
     <img class="profile-photo" src="images/portrait.jpg" alt="Yitian Xiao">
     <div>
