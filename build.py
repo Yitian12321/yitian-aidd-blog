@@ -661,6 +661,9 @@ def build() -> int:
         ("images/avatar.jpg", f"images/avatar.jpg?v={stamp}"),
         ("images/portrait.jpg", f"images/portrait.jpg?v={stamp}"),
     ]
+    for post in posts:
+        rel = f"images/thumbs/{post['slug']}.jpg"
+        stamp_pairs.append((rel, f"{rel}?v={stamp}"))
     for page in DOCS.rglob("*.html"):
         text = page.read_text(encoding="utf-8")
         for old, new in stamp_pairs:
