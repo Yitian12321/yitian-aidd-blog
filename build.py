@@ -307,8 +307,8 @@ POST = """<article class="post">
   <div class="post-foot">
     <p class="source">Originally published in Chinese on WeChat, {{date_display}}, as
       <a href="{{source_url}}" rel="noopener">{{source_title}}</a>.</p>
-    <p>Translation and figures by {{author}}. Corrections are welcome by
-      <a href="{{github}}/yitian-aidd-blog/issues">opening an issue</a>.</p>
+    <p>English version by {{author}}; figures carried over from the Chinese original.
+      Corrections are welcome via <a href="{{github}}/yitian-aidd-blog/issues">an issue</a>.</p>
   </div>
   <nav class="post-nav">
 {{post_nav}}
