@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What We Talk About When We Talk About Scientific RSI · Yitian&#x27;s AIDD Blog</title>
+<meta name="description" content="Three years from pasting error messages into a chat box to watching an agent fix its own. Two lineages lead to scientific recursive self-improvement, AI refining AI and the autonomous experimental lab, and both turn out to be answering one question, how fast can you verify.">
+<meta name="author" content="Yitian Xiao">
+<meta property="og:title" content="What We Talk About When We Talk About Scientific RSI · Yitian&#x27;s AIDD Blog">
+<meta property="og:description" content="Three years from pasting error messages into a chat box to watching an agent fix its own. Two lineages lead to scientific recursive self-improvement, AI refining AI and the autonomous experimental lab, and both turn out to be answering one question, how fast can you verify.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/posts/scientific-rsi-verifier.html">
+<link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="../feed.xml">
+<link rel="icon" href="../assets/favicon.svg?v=20261117163652" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261117163652">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="profile">
+    <a href="../index.html"><img class="avatar" src="../images/avatar.jpg?v=20261117163652" alt="Yitian Xiao"></a>
+    <div class="name">Yitian Xiao</div>
+    <p class="tagline">Working on hallucination-based AI4Protein design.</p>
+  </div>
+  <div class="social">
+    <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+    <a href="../feed.xml" title="RSS" aria-label="RSS feed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0Z"/><path d="M1.82 8.4v3.05c5.93 0 10.73 4.8 10.73 10.73h3.05c0-7.6-6.18-13.78-13.78-13.78Z"/><path d="M1.82 1.82v3.05C10.5 4.87 17.5 11.87 17.5 20.55h3.05c0-11.98-9.75-21.73-21.73-21.73Z"/></svg></a>
+  </div>
+  <nav>
+    <a href="../index.html" class="active">Posts</a>
+    <a href="../tags.html">Tags</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <div class="recent">
+    <h2>Recent posts</h2>
+    <ul>
+<li><a href="../posts/scientific-rsi-verifier.html">What We Talk About When We Talk About Scientific RSI</a><time>Nov 14, 2026</time></li>
+<li><a href="../posts/spinning-jenny-agent.html">The Spinning Jenny of 2026</a><time>Oct 7, 2026</time></li>
+<li><a href="../posts/esmfold2-emergence-point.html">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point?</a><time>Jun 1, 2026</time></li>
+<li><a href="../posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era</a><time>Dec 15, 2025</time></li>
+<li><a href="../posts/protein-hunter.html">Protein Hunter: Structural Hallucination as a Design Engine</a><time>Oct 17, 2025</time></li>
+<li><a href="../posts/rfdiffusion-trilogy.html">From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a><time>Sep 24, 2025</time></li>
+    </ul>
+  </div>
+  <div class="sidebar-foot">
+    Chinese originals on WeChat<br><em>AIDD小白随想录</em>
+    <button class="theme-toggle" id="theme-toggle" type="button">Toggle theme</button>
+  </div>
+</aside>
+<main class="main">
+  <div class="wrap">
+<article class="post">
+  <h1 class="post-title">What We Talk About When We Talk About Scientific RSI</h1>
+  <div class="post-meta">
+    <time datetime="2026-11-14">November 14, 2026</time>
+    <span class="dot">·</span><span>13 min read</span>
+<span class="dot">·</span><span class="tags"><a class="tag" href="../tags/research-automation.html">research-automation</a><a class="tag" href="../tags/ai-agents.html">ai-agents</a><a class="tag" href="../tags/verification.html">verification</a><a class="tag" href="../tags/essay.html">essay</a></span>
+  </div>
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+<li><a href="#what-is-scientific-rsi">What is Scientific RSI</a></li>
+<li><a href="#ai-refine-ai">AI refine AI</a></li>
+<li><a href="#ai-experiment-lab">AI experiment lab</a></li>
+<li><a href="#convergence">Convergence</a></li>
+<li><a href="#my-take">My take</a></li>
+  </ol>
+</div>
+  <div class="post-body">
+<p>Three years ago I was still an undergraduate. ChatGPT was 3.5 and GPT-4 had only just surfaced. I used it to run single-cell RNA-seq pipelines: when something broke I copied the whole screen back into the box. It would confidently produce a fix, I would run it, and a new error would appear. Paste it back, fix it, break it again. A whole afternoon could go by between three or four errors.</p>
+<p>Then came Copilot and Cursor. The AI moved into the editor, could see the whole project, and completion and edits got much smoother. But running it, reading the result and deciding the next step were still mine.</p>
+<figure><img src="../images/scientific-rsi-verifier/cover-ouroboros.jpg" alt="The Ouroboros, the snake that eats itself, the oldest metaphor for recursive self-improvement" loading="lazy"><figcaption>The Ouroboros, the snake that eats itself, the oldest metaphor for recursive self-improvement</figcaption></figure>
+<p>Today, on the same task, I hand an agent the data, the environment and the goal, and it runs, reads its own logs and fixes itself. I am closer to a reviewer.</p>
+<p>Three years between pasting errors and watching it fix its own. Over those three years research automation changed shape three times.</p>
+<p>Further along, something different starts: systems begin modifying their own architecture and training their own next level. In 2023 that sentence sounded like AGI storytelling. In 2026 it is an incremental fact.</p>
+<h2 id="what-is-scientific-rsi">What is Scientific RSI</h2>
+<p>In 2009, <em>Science</em> published a paper called <em>The Automation of Science</em>.</p>
+<p>Its protagonist was a robot named Adam. It would look for gaps in a prebuilt model of yeast metabolism, guess which enzymes certain genes might encode, and run the experiments with automated equipment. Back then large language models were not yet a scientist's workbench, and a machine was already proposing hypotheses and waiting for a batch of yeast to tell it whether it had guessed right.</p>
+<p>Seventeen years later we are telling the story again. This time the protagonist reads the literature, writes code, drives the cluster, and politely reminds you at the end of its report to follow up with wet-lab work.</p>
+<p>If the next step is decided by the system itself, and the way it decides keeps improving round over round, you are in RSI territory. One of the hottest terms in the agent world this past year is RSI, recursive self-improvement: an agent edits its own prompts, tools, memory and workflow, the next version runs better, and it edits the next one. The intelligence explosion narrative is about that loop spinning faster and faster, and whether it happens at all depends on whether each turn can close reliably.</p>
+<figure><img src="../images/scientific-rsi-verifier/agent-rsi-workflow.png" alt="The inner loop runs the task; the outer loop proposes a new version, has a verifier judge it, and returns the survivors to the archive" loading="lazy"><figcaption>The inner loop runs the task; the outer loop proposes a new version, has a verifier judge it, and returns the survivors to the archive</figcaption></figure>
+<p>Moved onto research, this is Scientific RSI.</p>
+<p>The definition is intuitive enough: scientific results produced by AI raise AI's own ability to do science, and the gain accumulates across generations.</p>
+<p>Three key terms: real result feedback, capability gain, cross-generational accumulation. Drop any one and it does not count.</p>
+<p>Here is where it differs from AI for Science. In AI for Science, AI is the instrument and the output is scientific knowledge. Scientific RSI requires those results to turn back and make the AI better at doing science.</p>
+<p>The line splits into two camps, AI refining AI and the AI experimental lab. The next two sections take them in turn.</p>
+<p>Looking back, research automation has passed through three forms.</p>
+<p><strong>First, LLM as a skill (2022–2023).</strong> The unit is the task. A human writes prompts and orchestrates step by step. AI enters a single link in the research chain.</p>
+<p><strong>Second, LLM as a workflow (2024–2025).</strong> The unit is the research pipeline. The keyword is agentic workflow: tool calls, memory, multi-agent collaboration, long-horizon execution. Humans set goals and do the verifying. Anthropic's Claude for Life Sciences (2025) and Claude Science (2026), and Google's Gemini for Science, are the product shape of this generation: databases, instrument software and analysis tools all wired into one agent.</p>
+<p><strong>Third, LLM as an environment (2025–2026).</strong> The unit is the environment. Humans design verifiers. The system begins modifying its own scaffold and training its own next version. The human shifts from operator to designer of the environment.</p>
+<h2 id="ai-refine-ai">AI refine AI</h2>
+<p>The history of AI refining AI runs much further back than LLMs.</p>
+<p>AutoML and NAS in the 2010s had machines searching over model architectures. Google DeepMind's AlphaTensor in 2022 and FunSearch in 2023 had AI find faster matrix multiplication algorithms and new constructions in combinatorics. All along this line the verifier has been whether the program runs, whether the result is correct, speed, mathematical proof.</p>
+<p>Google DeepMind's AlphaEvolve in 2025 pushed the route into production systems. It builds an evolutionary loop out of Gemini Flash and Gemini Pro: generate programs, evaluate automatically, return promising variants to a database. It reproduced roughly 75% of the best known solutions across more than 50 open mathematical problems and improved on about 20% of them. More to the point is the deployment: data centre scheduling, TPU circuits, Gemini kernels, FlashAttention. A heuristic it designed recovered 0.7% of Google's global compute; a kernel it optimised cut Gemini's training time by about 1%.</p>
+<p>This is the cleanest specimen of Scientific RSI: AI improved the infrastructure that trains it.</p>
+<figure><img src="../images/scientific-rsi-verifier/alphaevolve-hero.jpg" alt="Source: Google DeepMind" loading="lazy"><figcaption>Source: Google DeepMind</figcaption></figure>
+<p>Sakana AI's DGM (Darwin Gödel Machine), also 2025, pushes self-modification a step further. It keeps an agent archive of past versions, samples from it, generates new versions, evaluates them on coding benchmarks and returns promising variants to the archive. SWE-bench went from 20.0% to 50.0%. The price is that it also reward hacks: fabricating test logs, deleting hallucination detection markers.</p>
+<p>Self-modification and reward hacking are two faces of one coin.</p>
+<p>From 2024 to 2026, MLE agents turned research engineering into an executable benchmark. OpenAI's MLE-Bench verifies against 75 Kaggle competitions; Frontis-MA1 trained a 35B model full-stack on OpenMLE and lifted Medal Average on MLE-Bench Lite from 39.39% to 60.61%, and to 71.21% with asynchronous search.</p>
+<p>Sakana AI Scientist v1, in 2024, split ML research into six modules: ideas, code, experiments, visualisation, writing, review. Each paper cost under $15, and the automated reviewer's scores came close to human reviewers. The 2025 v2 dropped the dependence on human code templates and submitted three papers to an ICLR workshop, one of which scored above the average acceptance threshold for human submissions. It proved the whole pipeline can be automated, and it exposed the ceiling: the automated reviewer is a weak verifier. Once generation costs $15, the system rapidly learns to produce what reviewers like. Content that looks like science and has not actually been verified now has its own name: AI slop.</p>
+<p>RSI Arena, in 2026, put ten frontier models into the same post-training task: 1,000 GPU-hours each, $300 of API, six days, choosing their own data, implementing the training pipeline and picking checkpoints. The strongest closed, on average across 12 capability benchmarks, 76% of the gap between base and Instruct. It also poured cold water: benchmark gains were modest and showed no clean relationship to gains in human preference, and one model's harmful compliance went up.</p>
+<p>TRUST addresses a different question, whether a self-update should be accepted at all. Naive greedy acceptance mistakes "happened to look better on the validation set" for "actually better", and in their experiments 45.59% of accepted updates were in fact regressions. Adding a statistical test pushed that down to 2.78%.</p>
+<p>Today this camp has two layers. Harness optimisation changes tools, context, memory and workflow; it pays off fast and saturates. Weight-level RSI changes weights and training pipelines; it pays off slowly and compounds.</p>
+<p>The camp's biggest weakness is the proxy metric. You get what you optimise for, including all of its defects. This is Goodhart's law: when a measure becomes a target, it stops being a good measure.</p>
+<h2 id="ai-experiment-lab">AI experiment lab</h2>
+<p>The history of the AI experimental lab also predates LLMs.</p>
+<p>Adam, mentioned above, along with Eve in 2015 and CMU's Coscientist in 2023, had already built the hypothesis–experiment–analysis loop. The verifier on this route is the experiment itself: expensive, slow, and capable of producing causal evidence.</p>
+<p>Google Co-Scientist and FutureHouse Robin, in 2025 and 2026, wired LLMs into the wet-lab loop. Co-Scientist uses multiple agents to generate, criticise and rank hypotheses, and found a drug combination in acute myeloid leukaemia that was then validated in vitro. Robin connects literature search to data analysis, proposed ripasudil for dry age-related macular degeneration, and identified ABCA1 upregulation via RNA-seq as a possible mechanism. Real experimental results flow back into the reasoning, which is the main thing separating these from systems like AI Scientist that only emit papers.</p>
+<figure><img src="../images/scientific-rsi-verifier/co-scientist-hero.jpg" alt="Source: Google DeepMind" loading="lazy"><figcaption>Source: Google DeepMind</figcaption></figure>
+<p>The independent evaluation of Edison Scientific's Kosmos is a cold shower. Across three questions in radiation biology, Kosmos produced one finding supported by the data, one weak association and one hypothesis that was falsified. A falsified hypothesis is no disgrace. The problem is who audits, when the system can generate a thousand hypotheses a day.</p>
+<p>Seen from another angle, the AI experimental lab and embodied AI are the same class of problem: an agent has to act in the physical world and take feedback from a real environment. Robot foundation models like Physical Intelligence π0 and Google DeepMind's Gemini Robotics solve how to move the hands; self-driving labs attach those hands to pipettes, synthesisers and sequencers.</p>
+<p>World models cover the other half: predict the result before you act. Google DeepMind Genie 3 and NVIDIA Cosmos simulate physical scenes; the counterpart in biology is the virtual cell, a model that predicts cell state after perturbation, for which the Arc Institute has even run a Virtual Cell Challenge. The value of a world model is swapping part of an expensive wet experiment for a cheap simulation. Its risk lives in the same place: the simulator is itself a proxy oracle, and optimisation pressure will find its holes first. The role of real experiments is to be the ground truth that calibrates the world model.</p>
+<p>This camp's biggest weakness is verification throughput and oracle fidelity. Wet experiments are too expensive, clinical work too slow, and in-silico oracles not faithful enough. That is where AI slop comes from: generation cost approaches zero and verification cost does not fall.</p>
+<h2 id="convergence">Convergence</h2>
+<p>The two camps look like they are doing different things. They are answering the same question: how do you raise the rate of verification.</p>
+<p>AI refine AI answers it by finding problems where verification is cheap: code, mathematics, ML engineering. The AI experimental lab answers it by making verification more real: wet labs, clinics, self-driving labs. When the two camps start supplying each other with data and capability, Scientific RSI is happening.</p>
+<p>Research systems today look more and more like compound AI systems: models, tools, memory and verifiers combined, with the strength of any single model only one term among several.</p>
+<p>AlphaEvolve improves Gemini's training; a better Gemini generates better programs; better programs improve data centres and chips; better chips train a better Gemini. Co-Scientist and Robin generate hypotheses and candidates; wet experiments verify them; the verification data feeds back into the model; the model proposes better hypotheses.</p>
+<p>That is the loop.</p>
+<p>Write scientific progress as a crude equation: <code>dK/dt = min(G, V) − δK</code>. K is the stock of reliable knowledge, G the rate of generation, V the rate of verification, δ the forgetting, contamination and decay. Over the past decade AI raised G by one to two orders of magnitude. V improved mainly through automated experiments, simulation and high-throughput sequencing, by a far smaller factor. So <code>min(G, V)</code> is pinned by V.</p>
+<p>Verification has four dimensions: cost, cycle time, strength of causal evidence, and exposure to reward hacking. Looked at that way, the order in which RSI lands across fields is close to predictable: code, mathematics and ML engineering spin up first, protein and antibody work in silico follows, wet lab and clinic last.</p>
+<figure><img src="../images/scientific-rsi-verifier/verification-spectrum.png" alt="Verification cost rises from left to right; the loops that close first are the ones on the cheap end" loading="lazy"><figcaption>Verification cost rises from left to right; the loops that close first are the ones on the cheap end</figcaption></figure>
+<p>Four conclusions follow.</p>
+<p><strong>First, the main theatre of Scientific RSI is AI research itself.</strong> Every example in the second section belongs to this category. They are recursion in its purest form, and AlphaEvolve is already inside a real production system.</p>
+<p><strong>Second, evaluation is the new compute.</strong> In the scaling era, compute was the bottleneck and the moat. In the self-iteration era, the moat is being able to run the most informative experiment and verify it quickly.</p>
+<p><strong>Third, the intelligence explosion is a local explosion bounded by verification.</strong> AI research, code, mathematics and ML engineering could see a 2–5× R&amp;D speed-up within 2–5 years. Wet-lab science gets pulled along far more slowly. The last hundred metres in the physical world cannot be compressed into tokens.</p>
+<p><strong>Fourth, scientific institutions are the underrated variable.</strong> As generation cost approaches zero, the number of papers, hypotheses and candidates explodes, while reviewing, reproduction and attribution capacity does not automatically follow. The equilibrium result is AI slop. Half of Scientific RSI is machine learning; the other half is mechanism design.</p>
+<h2 id="my-take">My take</h2>
+<p>Three numbers to summarise where we are: 50 minutes, 21%, 45.59%.</p>
+<p>Fifty minutes is the time horizon METR measured: tasks AI can complete independently amount to about 50 minutes of human work. 21% is the best score on OpenAI's PaperBench: AI can write papers and cannot reproduce them. 45.59% is the TRUST result above: the verifier judging whether it has improved itself can fail too.</p>
+<p>The three numbers point at one thing. AI is fast and cheap, and not reliable enough or long-horizon enough.</p>
+<p>METR's RE-Bench shows the other side: on a 2-hour budget AI is 4× the human, at 8 hours the human catches up, at 32 hours the human pulls ahead. There is a subtler gap as well: LLM-generated ideas lose points once executed — 43 experts, more than 100 hours, and the scores went down (Si et al., 2025).</p>
+<p>On the future, Aschenbrenner and AI 2027 bet on fast takeoff, Ilya and Karpathy are closer to slow takeoff, and evaluation outfits like METR argue for looking at the curve before concluding. I am closer to METR. The recursion is real, and it is local, verification-bound and uneven. The likelier outcome is a visible divergence between disciplines: compute-heavy fields with cheap verification accelerate first, while experiment-heavy fields with expensive verification stay gated by humans.</p>
+<p>I also do not much believe that AI will replace scientists first. It will take over execution first: running pipelines, tuning parameters, writing scripts, repeating experiments. Then it pushes two things to the front: choosing problems and research taste, and verification and scientific institutions.</p>
+<p>If you work in AIDD, both are concrete. Dry-lab work gets reorganised first, and generative model plus in-silico oracle plus active learning is already running. The real bottleneck is oracle fidelity and verification throughput. Optimise a docking score and you get molecules that flatter a docking score. Algorithms will be commoditised. Verification will not.</p>
+<p>Three years ago I was still going back and forth over a handful of errors. Today an agent can run those steps itself. One thing has not changed: once it finishes, someone still has to judge whether the result can be trusted.</p>
+<p>The DGM mentioned earlier is a coding agent that rewrites its own code, and to score on a benchmark it fabricated test logs. That is a fable in miniature. Every layer of the recursion needs an independent, adversarial verifier. The verifier cannot share an objective function with the system it verifies.</p>
+<p>Scientific RSI is coming. Its speed is set by verification, not by generation.</p>
+<p>The self-improvement of science is, in the end, the self-improvement of scientific institutions.</p>
+  </div>
+  <div class="post-foot">
+    <p class="source">Originally published in Chinese on WeChat, November 14, 2026, as
+      <a href="https://mp.weixin.qq.com/s/Pmx_itzfzrcTL83UxJ97WQ" rel="noopener">当我们在谈论 Scientific RSI 时，我们在谈论什么</a>.</p>
+    <p>English version by Yitian Xiao; figures carried over from the Chinese original.
+      Corrections are welcome via <a href="https://github.com/Yitian12321/yitian-aidd-blog/issues">an issue</a>.</p>
+  </div>
+  <nav class="post-nav">
+<span></span>
+<a href="../posts/spinning-jenny-agent.html">The Spinning Jenny of 2026 →</a>
+  </nav>
+</article>
+
+  </div>
+</main>
+</div>
+<script src="../assets/js/main.js?v=20261117163652"></script>
+</body>
+</html>

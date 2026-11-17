@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Spinning Jenny of 2026 · Yitian&#x27;s AIDD Blog</title>
+<meta name="description" content="An agent spent four weeks optimising 36 open-source biomolecular model implementations, including kernels that a protein designer would never have written. Reading that report alongside 1768, the Luddites and Engels&#x27; pause, on what gets repriced, where the bottleneck moves next, and where an apprentice stands.">
+<meta name="author" content="Yitian Xiao">
+<meta property="og:title" content="The Spinning Jenny of 2026 · Yitian&#x27;s AIDD Blog">
+<meta property="og:description" content="An agent spent four weeks optimising 36 open-source biomolecular model implementations, including kernels that a protein designer would never have written. Reading that report alongside 1768, the Luddites and Engels&#x27; pause, on what gets repriced, where the bottleneck moves next, and where an apprentice stands.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yitian12321.github.io/yitian-aidd-blog/posts/spinning-jenny-agent.html">
+<link rel="alternate" type="application/rss+xml" title="Yitian's AIDD Blog" href="../feed.xml">
+<link rel="icon" href="../assets/favicon.svg?v=20261117163652" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261117163652">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="profile">
+    <a href="../index.html"><img class="avatar" src="../images/avatar.jpg?v=20261117163652" alt="Yitian Xiao"></a>
+    <div class="name">Yitian Xiao</div>
+    <p class="tagline">Working on hallucination-based AI4Protein design.</p>
+  </div>
+  <div class="social">
+    <a href="https://github.com/Yitian12321" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+    <a href="../feed.xml" title="RSS" aria-label="RSS feed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0Z"/><path d="M1.82 8.4v3.05c5.93 0 10.73 4.8 10.73 10.73h3.05c0-7.6-6.18-13.78-13.78-13.78Z"/><path d="M1.82 1.82v3.05C10.5 4.87 17.5 11.87 17.5 20.55h3.05c0-11.98-9.75-21.73-21.73-21.73Z"/></svg></a>
+  </div>
+  <nav>
+    <a href="../index.html" class="active">Posts</a>
+    <a href="../tags.html">Tags</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <div class="recent">
+    <h2>Recent posts</h2>
+    <ul>
+<li><a href="../posts/scientific-rsi-verifier.html">What We Talk About When We Talk About Scientific RSI</a><time>Nov 14, 2026</time></li>
+<li><a href="../posts/spinning-jenny-agent.html">The Spinning Jenny of 2026</a><time>Oct 7, 2026</time></li>
+<li><a href="../posts/esmfold2-emergence-point.html">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point?</a><time>Jun 1, 2026</time></li>
+<li><a href="../posts/post-bindcraft-era.html">Protein Hallucination Models in the Post-BindCraft Era</a><time>Dec 15, 2025</time></li>
+<li><a href="../posts/protein-hunter.html">Protein Hunter: Structural Hallucination as a Design Engine</a><time>Oct 17, 2025</time></li>
+<li><a href="../posts/rfdiffusion-trilogy.html">From Sketch to Hologram: David Baker&#x27;s RFdiffusion Trilogy</a><time>Sep 24, 2025</time></li>
+    </ul>
+  </div>
+  <div class="sidebar-foot">
+    Chinese originals on WeChat<br><em>AIDD小白随想录</em>
+    <button class="theme-toggle" id="theme-toggle" type="button">Toggle theme</button>
+  </div>
+</aside>
+<main class="main">
+  <div class="wrap">
+<article class="post">
+  <h1 class="post-title">The Spinning Jenny of 2026</h1>
+  <div class="post-meta">
+    <time datetime="2026-10-07">October 7, 2026</time>
+    <span class="dot">·</span><span>11 min read</span>
+<span class="dot">·</span><span class="tags"><a class="tag" href="../tags/research-automation.html">research-automation</a><a class="tag" href="../tags/ai-agents.html">ai-agents</a><a class="tag" href="../tags/binder-design.html">Binder design</a><a class="tag" href="../tags/essay.html">essay</a></span>
+  </div>
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+<li><a href="#1768-the-spinners-of-blackburn-smash-the-machine">1768, the spinners of Blackburn smash the machine</a></li>
+<li><a href="#4-weeks-and-36-implementations">4 weeks and 36 implementations</a></li>
+<li><a href="#what-actually-got-compressed-is-the-wall-between-fields">What actually got compressed is the wall between fields</a></li>
+<li><a href="#the-other-page-of-the-ledger-the-totals-went-up-and-that-generation-never-saw-it">The other page of the ledger: the totals went up, and that generation never saw it</a></li>
+<li><a href="#bottlenecks-move-they-do-not-disappear">Bottlenecks move, they do not disappear</a></li>
+<li><a href="#more-papers-more">&quot;More papers, more ??&quot;</a></li>
+<li><a href="#where-am-i-where-is-the-future">Where am I, where is the future</a></li>
+  </ol>
+</div>
+  <div class="post-body">
+<p>May 10, 2026. Gesling Stadium, Pittsburgh. Jensen Huang stood at Carnegie Mellon's 128th commencement and said one sentence to a field of black caps.</p>
+<blockquote><p>Every major technological revolution in history created fear alongside opportunity.</p></blockquote>
+<figure><img src="../images/spinning-jenny-agent/huang-cmu-2026.jpg" alt="Jensen Huang speaking at Carnegie Mellon&#x27;s 128th commencement" loading="lazy"><figcaption>Jensen Huang speaking at Carnegie Mellon's 128th commencement</figcaption></figure>
+<p>His answer was: do not fear the future, guide it wisely, build it responsibly, and ensure that its benefits reach as many people as possible. The verb in that last clause is <em>ensure</em>.</p>
+<p>I only arrived in Pittsburgh in August, so I missed hearing it in person and caught up on YouTube. I stopped at <em>ensure</em>. "Ensure that its benefits reach as many people as possible" is an imperative. It says this is something we have to make happen, not something that happens by itself.</p>
+<p>My mind went back 258 years, to a group of people for whom nobody ensured anything.</p>
+<h2 id="1768-the-spinners-of-blackburn-smash-the-machine">1768, the spinners of Blackburn smash the machine</h2>
+<p>Around 1764, James Hargreaves of Lancashire built the spinning jenny. Before it, one spinner tended one spindle. The jenny let one person turn eight at once, later models many more, and it opened the first Industrial Revolution.</p>
+<figure><img src="../images/spinning-jenny-agent/spinning-jenny-1836.jpg" alt="The spinning jenny as drawn in the Penny Magazine, 1836. The dense row on the left is the spindles" loading="lazy"><figcaption>The spinning jenny as drawn in the Penny Magazine, 1836. The dense row on the left is the spindles</figcaption></figure>
+<p>Yarn prices began to fall. In 1768 the hand spinners of Blackburn broke into Hargreaves' house and smashed his machines. He fled with his family to Nottingham.</p>
+<p>Textbooks usually write this up as ignorance against progress. I prefer to read it as a pricing event. Before 1768, turning fibre into an even thread was scarce, and the scarcity was supplied by a pair of hands trained over many years. After 1768 the price of that skill was set by a machine. The people who smashed it were not failing to understand it. They understood better than anyone what those eight spindles meant.</p>
+<h2 id="4-weeks-and-36-implementations">4 weeks and 36 implementations</h2>
+<p>Back to this year.</p>
+<p>On September 17, Anthropic released a technical report titled <em>Accelerating open-source biomolecular models with Claude</em>. They had Claude optimise inference for open-source biological models, supervised by two scientists working on biomolecular modelling. The report notes specifically that neither had experience in inference optimisation or kernel engineering.</p>
+<p>In under four weeks Claude delivered optimised packages for 36 model implementations, covering more than 30 widely used open-source base models across structure prediction and co-folding, protein design, genomics and protein language models. Each package ships three modes: <strong>Exact</strong> (bit-for-bit reproduction of the original output), <strong>Fast</strong> (a little numerical precision traded away for speed) and <strong>Big</strong> (lower peak memory, so larger inputs fit on the GPU).</p>
+<p>The numbers are good. In Exact mode the forward pass of 14 structure prediction models was 1.6× faster on average; in Fast mode 13 models averaged 4.1×. On accuracy, pooling 1,925 model–target pairs, the share of acceptable interfaces moved by less than one percentage point in every mode, and not one of those shifts was distinguishable from zero.</p>
+<p>Then I got to the design model figure.</p>
+<figure><img src="../images/spinning-jenny-agent/design-speedup.png" alt="Speed-ups for 14 design models, grouped into hallucination design, structure generation and inverse folding. Light is Exact, mid is Fast, dark is Big" loading="lazy"><figcaption>Speed-ups for 14 design models, grouped into hallucination design, structure generation and inverse folding. Light is Exact, mid is Fast, dark is Big</figcaption></figure>
+<p>ColabDesign/BindCraft, the hallucination design line: 4.9× faster per design step in Fast mode, peak memory down to 0.35× at best.</p>
+<p>Supplementary section S2.1 explains how, ordered by contribution. Remove the chunking the upstream code applies above 384 tokens (it was there to save memory). Swap in a fused flash-style attention kernel that never materialises the full attention score matrix. Fuse the triangle multiplication.</p>
+<p>I had had the same idea while working on hallucination models. I spent a while reading about FlashAttention and FlashIPA, but it stayed a preliminary sketch, something to pick up once I was properly in a lab.</p>
+<p>A little earlier than that, I read the ColabDesign source for the first time in order to modify the model. It was my first contact with JAX. Chat models were not smart enough then to be worth asking, so I worked through the JAX source line by line, hunting for where the masking mechanism lived in a completely unfamiliar codebase. It took me several days.</p>
+<p>A year later, that implementation would take about an hour.</p>
+<h2 id="what-actually-got-compressed-is-the-wall-between-fields">What actually got compressed is the wall between fields</h2>
+<p>The easy thing to miss is the parenthesis about the supervisors: the two scientists do not do kernel engineering.</p>
+<p>In those same four weeks Claude also produced a GPU kernel suite called FlashPairformer. At the pair width of 128 used by AlphaFold3 and Boltz-2, its triangle attention is 2.7× faster than NVIDIA's cuEquivariance and its triangle multiplication 1.7× faster; at pair width 256, 2.9× and 3.2×. Those are geometric means over seven input sizes, and it was faster at every size.</p>
+<p>NVIDIA has a team dedicated to this.</p>
+<p>So what got compressed is not only labour. A protein design researcher who wanted to speed up the models they run every day used to face a whole wall: CUDA, kernel fusion, memory layout, JAX compilation behaviour. The point of that wall was precisely that it filtered most people out. It was not a bug, it was the moat around people like me. I do not do kernels, so there are many people who do not do kernels, so the ones who do are worth something. I spent several days working out how ColabDesign's masking was implemented, so there are not many people in this field who have, so I am worth a little something.</p>
+<p>The jenny demolished a wall of exactly this kind. Turning fibre into an even thread took skill in the hands, skill took years, and the years kept people out. The machine arrived, the wall was gone, the yarn was still there, and there was more of it.</p>
+<p>One person turning eight spindles. One person running thirty design trajectories.</p>
+<h2 id="the-other-page-of-the-ledger-the-totals-went-up-and-that-generation-never-saw-it">The other page of the ledger: the totals went up, and that generation never saw it</h2>
+<p>The macro ledger of the Industrial Revolution really is handsome.</p>
+<p>British raw cotton imports: roughly 2.5 million pounds in 1760, 22 million in 1787, 366 million in 1837. Yarn prices fell to about a twentieth. Total employment in cotton textiles rose over the long run, because cheaper goods opened markets, pulled up the industries upstream and downstream, and moved a great many people from the countryside into cities.</p>
+<p>This is where the line "in the long run technology creates more jobs than it destroys" comes from. The line is true.</p>
+<p>What it leaves out is the time scale.</p>
+<p>The economic historian Robert Allen gave the period from 1790 to 1840 a name: <a href="https://www.nuffield.ox.ac.uk/Users/Allen/engelspause.pdf">Engels' pause</a>. On the Crafts–Harley estimates, British output per worker grew 46% between 1780 and 1840, while Feinstein's real wage index over the same period rose 12%. The profit rate doubled, and profit's share of national income expanded at the expense of labour and land. Only after 1840 did it reverse: from 1840 to 1900, output per worker grew 90% and real wages 123%.</p>
+<p>Which is to say that between smashing the machines and the gains reaching ordinary workers lay about two generations.</p>
+<figure><img src="../images/spinning-jenny-agent/luddite-1812.jpg" alt="The Leader of the Luddites, an engraving published in May 1812" loading="lazy"><figcaption>The Leader of the Luddites, an engraving published in May 1812</figcaption></figure>
+<p>The same stretch of history contains a second round of machine breaking. The Luddite movement ran from 1811 to 1816, more than forty years after Blackburn. Its participants were mainly weavers, and what they broke was mainly stocking frames and power looms.</p>
+<p>Reading what the Luddites themselves left behind, their demands centre on wages, child labour, working conditions and product quality, and they targeted specific machines and specific uses of them. What they opposed was a distribution.</p>
+<p>Writing them up as fools who opposed technology is a label later generations applied to save themselves the trouble. When people today talk about resistance to AI, the same label is still being applied, by the same kind of person, to save the same trouble.</p>
+<p>The <em>ensure</em> in Huang's sentence points right at this. It does not happen spontaneously. It did not in 1768, and it did not from 1790 to 1840.</p>
+<h2 id="bottlenecks-move-they-do-not-disappear">Bottlenecks move, they do not disappear</h2>
+<p>Once spinning stopped being the bottleneck, the bottleneck moved to weaving, which produced the power loom. Once weaving stopped being the bottleneck, it moved to the cotton supply.</p>
+<p>Research works the same way. Once running the experiment stops being the bottleneck, the bottleneck moves to deciding what is worth running and confirming whether it is real.</p>
+<p>Two symptoms, both underway.</p>
+<p>The first is ICLR, which I took part in this round. ICLR 2026 had roughly 19,500 submissions. By the ICLR 2027 abstract deadline it was about 50,000, with later reporting putting it above 60,000 — a figure some reports note exceeds the sum of every ICLR since it was founded in 2013. At conventional reviewing intensity, that stack of papers corresponds to something like 150 person-years of review.</p>
+<p>The generation side exploded. The reviewing side did not. Reviewing is verification, and verification is now the bottleneck.</p>
+<p>The second symptom is in the same report. On a single H200, in 24 hours, with a prompt of about 1,100 words, no web access, no sub-agents and no human intervention in the design process, Claude produced binders that matched in-silico scores from earlier campaigns with a $10,000 GPU budget (roughly 2,500 H100 hours): median score after 24 hours of 0.785 for Opus 5 against 0.749. The GPU budgets differ by about a hundredfold.</p>
+<figure><img src="../images/spinning-jenny-agent/binder-100x.png" alt="A single H200 over 24 hours, against a campaign with a hundred times the GPU budget" loading="lazy"><figcaption>A single H200 over 24 hours, against a campaign with a hundred times the GPU budget</figcaption></figure>
+<figure><img src="../images/spinning-jenny-agent/claude-binders.jpg" alt="Nine de novo binders designed by Claude and confirmed in the wet lab, arranged to spell ANTHROPIC. Source: Anthropic" loading="lazy"><figcaption>Nine de novo binders designed by Claude and confirmed in the wet lab, arranged to spell ANTHROPIC. Source: Anthropic</figcaption></figure>
+<p>The cost of designing a thousand sequences is collapsing. The cost of confirming which one actually binds is not collapsing in step. That gap is where the value sits for the next few years.</p>
+<h2 id="more-papers-more">"More papers, more ??"</h2>
+<p>My original question was whether the surge to sixty thousand papers adds noise or genuine innovation.</p>
+<p>I now think the question is badly formed.</p>
+<p>After 1768, machine-spun yarn was for a while worse than yarn from a skilled hand. It stopped nothing, because cheapness and volume opened markets that hand spinning could never have opened. Average quality fell and the textile industry won.</p>
+<p>So asking about average quality is beside the point. What decides the outcome is something else: whether the mechanisms for filtering and organising can keep up with the volume.</p>
+<p>What appeared after 1768 was not better hand-spun yarn. It was the factory system, a way of organising that was equally unfamiliar and equally resented at the time. It organised the flood of capacity.</p>
+<p>Faced with sixty thousand submissions, what we need is probably not stricter review either. Stricter is just tightening the knobs on the same mechanism, and that mechanism was designed for two thousand. We need a new way of organising, and I do not yet know what it looks like. Perhaps selection that puts reproducibility first. Perhaps making verification itself a citable output. Perhaps something else.</p>
+<p>What is certain is that it will not grow on its own.</p>
+<h2 id="where-am-i-where-is-the-future">Where am I, where is the future</h2>
+<p>I am not the hand spinner being replaced. The models were already there when I entered this field.</p>
+<p>I am not the owner of the machines either. I did not write those kernels.</p>
+<p>The closer position is the young apprentice in 1768 who has just learned to work a jenny. The skill his hands spent a few years acquiring has just been devalued, and knowing how to use the new machine has not yet become the new scarcity, because everyone is learning it at the same time. What happens to the apprentice does not depend on how fast he learns. It depends on what new structure the industry grows once yarn gets cheap, and on whether he is standing inside that structure.</p>
+<p>The time scale this round should be shorter than two generations. I hope so.</p>
+<p>Those 36 optimised packages are open source now. The idea I had meant to pick up was a threshold; it is now a line of pip install and a prompt.</p>
+<p>It reminds me of Liu Shengyu's essay, <em>I Had to Bury My Talent in Yesterday</em>. The JAX code I once read line by line is code the next person using it will not need to know either. Underneath Fast mode is a set of kernels I have not read, faster, and numerically sound, and I probably never will read them.</p>
+<p>Once a jenny is turning, nobody asks how many years those hands trained.</p>
+  </div>
+  <div class="post-foot">
+    <p class="source">Originally published in Chinese on WeChat, October 7, 2026, as
+      <a href="https://mp.weixin.qq.com/s/qJ_D_2JNlPAjv_tYJBUPWA" rel="noopener">2026的珍妮纺纱机</a>.</p>
+    <p>English version by Yitian Xiao; figures carried over from the Chinese original.
+      Corrections are welcome via <a href="https://github.com/Yitian12321/yitian-aidd-blog/issues">an issue</a>.</p>
+  </div>
+  <nav class="post-nav">
+<a href="../posts/scientific-rsi-verifier.html">← What We Talk About When We Talk About Scientific RSI</a>
+<a href="../posts/esmfold2-emergence-point.html">Zuckerberg&#x27;s Protein World Model: Has ESMFold2 Crossed AI4Protein&#x27;s Emergence Point? →</a>
+  </nav>
+</article>
+
+  </div>
+</main>
+</div>
+<script src="../assets/js/main.js?v=20261117163652"></script>
+</body>
+</html>

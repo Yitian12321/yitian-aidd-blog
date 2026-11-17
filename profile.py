@@ -26,9 +26,9 @@ PROFILE_HTML = """
 <p class="profile-lede">
   I work on hallucination-based AI4Protein design: using structure prediction models as differentiable
   scoring functions to search sequence space for new antibodies and binders, and following those designs
-  into the wet lab. Most recently I built XDCRCraft for de novo antibody design at XtalPi and ComplexDiff
-  for protein-glue design at Shanghai AI Lab. I am starting an M.S. in Computational Biology at Carnegie
-  Mellon, after a B.S. in Bioinformatics at Zhejiang University.
+  into the wet lab. Most recently I built XCDRCraft for de novo antibody design at XtalPi and ComplexDiff
+  for protein-glue design at Lingang National Laboratory. I am starting an M.S. in Computational Biology
+  at Carnegie Mellon, after a B.S. in Bioinformatics at Zhejiang University.
 </p>
 
 <h2>Experience</h2>
@@ -39,9 +39,9 @@ PROFILE_HTML = """
       <strong>XtalPi</strong> <span class="tl-role">AI Drug Discovery Algorithm Development Intern, AI4Protein IDD</span>
       <span class="tl-where">Shanghai</span>
       <ul>
-        <li>Built <strong>XDCRCraft</strong>, a BindCraft-based de novo antibody hallucination model that integrates an
+        <li>Built <strong>XCDRCraft</strong>, a BindCraft-based de novo antibody hallucination model that integrates an
           AbLang2 antibody-naturalness prior; roughly doubled the average sequence pass rate.</li>
-        <li>Deployed XDCRCraft across commercial antibody programs for Eli Lilly, AbbVie and Johnson &amp; Johnson,
+        <li>Deployed XCDRCraft across commercial antibody programs for Eli Lilly, AbbVie and Johnson &amp; Johnson,
           delivering de novo sequences against five targets with successful expression and binding.</li>
         <li>Led internal antibody design programs end to end, from computational design and screening through
           sequencing submission for wet-lab validation; advanced four candidates to mouse in vivo studies.</li>
@@ -53,7 +53,7 @@ PROFILE_HTML = """
   <li>
     <div class="tl-when">Apr 2026 – Aug 2026</div>
     <div class="tl-what">
-      <strong>Shanghai AI Lab</strong> <span class="tl-role">Research Intern, Artificial Intelligence Research Department</span>
+      <strong>Lingang National Laboratory</strong> <span class="tl-role">Research Intern, Artificial Intelligence Research Department</span>
       <span class="tl-where">Shanghai</span>
       <ul>
         <li>Developed <strong>ComplexDiff</strong>, a dual-target protein-glue design framework with target-relative
@@ -79,7 +79,7 @@ PROFILE_HTML = """
 </ol>
 
 <h2>Selected publications</h2>
-<p class="pub"><strong>Xiao, Y.</strong>, Zhang, H., Long, Y. (2026). XDCRCraft: Antibody CDR Redesign Method and System
+<p class="pub"><strong>Xiao, Y.</strong>, Zhang, H., Long, Y. (2026). XCDRCraft: Antibody CDR Redesign Method and System
   Based on Protein Structure Prediction Model Hallucination and Antibody Language Model Regularization.
   <span class="pub-meta">Under review.</span></p>
 <p class="pub">Gu, Y., Chen, J., Wang, Z., Shao, Q., Li, Z., Ye, Y., <strong>Xiao, Y.</strong>, et al. (2025).
